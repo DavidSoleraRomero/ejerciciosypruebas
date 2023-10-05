@@ -17,7 +17,7 @@ public class Ejercicio10 {
         System.out.println("    " + ConsoleColors.CYAN_BOLD + "con David Solera Romero" + ConsoleColors.RED
                 + "     ██    ████    ██             ");
         System.out.println("                                  " + ConsoleColors.YELLOW + "████    ████               ");
-        System.out.println("                                                             ");
+        System.out.print("                                                             ");
 
     }
 }
