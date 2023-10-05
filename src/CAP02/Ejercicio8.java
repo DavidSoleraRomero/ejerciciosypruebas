@@ -10,8 +10,8 @@ public class Ejercicio8 {
         char dos = 'A';
         char tres = 'V';
         char cuatro = 'I';
-        char cinco = 'S';
-        String concatena = uno + "" + dos + "" + tres + "" + cuatro + "" + cinco;
+        char cinco = 'D';
+        String concatena = uno + "" + dos + tres + cuatro + cinco;
         System.out.println(concatena);
     } // Nos da el problema de que se transforma en int (debido al código ASCII)
 } // Podemos solucionar el problem añadiendo comillas tras cada variable de tipo

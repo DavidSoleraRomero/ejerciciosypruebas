@@ -11,8 +11,13 @@ public class Ejercicio9 {
         float b = Float.parseFloat(System.console().readLine());
         System.out.print("Introduce el valor de C: ");
         float c = Float.parseFloat(System.console().readLine());
-        double ecuacionpos = ((-b + Math.sqrt((b * b) - 4 * a * c) / 2));
-        double ecuacionneg = ((-b - Math.sqrt((b * b) - 4 * a * c) / 2));
-        System.out.println(ecuacionpos + " " + ecuacionneg);
+        double ecuacionpos = (((-(b) + Math.sqrt((b * b) - 4 * a * c)) / (2 * a)));
+        double ecuacionneg = (((-(b) - Math.sqrt((b * b) - 4 * a * c)) / (2 * a)));
+        if (ecuacionpos == ecuacionneg) {
+            System.out.printf("Solo hay una solucióm real --> %.2f", ecuacionpos);
+        } else {
+            System.out.printf("La positiva da --> %.2f | La negativa da --> %.2f", ecuacionpos, ecuacionneg);
+        }
+
     }
 }

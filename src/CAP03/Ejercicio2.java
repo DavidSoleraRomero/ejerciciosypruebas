@@ -5,7 +5,7 @@ convertir debe ser introducida por teclado. */
 public class Ejercicio2 {
     public static void main(String[] args) {
         float euros1 = 0.00601012f;
-        float pesetas1 = 166.3860f;
+        float pesetas1 = 166.386f;
         System.out.println("Euros a pesetas:");
         float euros2 = Float.parseFloat(System.console().readLine());
         System.out.println("Pesetas a euros:");
