@@ -1,39 +1,46 @@
 package CAP05;
 
-import java.util.Scanner;
-
 /* Realiza un programa que pida primero un número y a continuación un dígito.
 El programa nos debe dar la posición (o posiciones) contando de izquierda a
 derecha que ocupa ese dígito en el número introducido. */
 public class Ejercicio26 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.print("Introduce un número: ");
-        int num = sc.nextInt();
-        String longitud = num + "";
-        int acum = 0;
+        long num = Long.parseLong(System.console().readLine());
+        long num2 = num;
+        long largo = 0;
+        while (true) {
+            num2 = num2 / 10;
+            largo++;
+            if (num2 % 10 == 0) {
+                break;
+            }
+        }
+        long acum = 0;
         System.out.print("Introduce un dígito que puede estar (o no) dentro del nº anterior: ");
-        int digito = sc.nextInt();
+        int digito = Integer.parseInt(System.console().readLine());
         double contieneUno;
         String contieneMas = "", posicion = "";
-        int resto = (int) Math.pow(10, longitud.length()); /*
-                                                            * resto se utiliza para ir sacando las cifras, trabaja con
-                                                            * comas
-                                                            */
-        int comas = (int) Math.pow(10, longitud.length() - 1); /*
-                                                                * comas se encarga de eliminar las comas del número que
-                                                                * resulta de resto
-                                                                */
-        int pos = 1;
-        for (int i = 1; i <= longitud.length(); i++) {
-            int iultimaCifra = num % resto;
-            if ((i < longitud.length())) { /* Se usa comas a partir del segundo bucle */
-                iultimaCifra = iultimaCifra / comas;
+        String restoS = "1";
+        for (long i = 1; i <= largo; i++) {
+            restoS = restoS + "0";
+        }
+        long resto = Long.parseLong(restoS); /* resto se utiliza para ir sacando las cifras, trabaja con comas */
+        String comasS = "1";
+        for (long i = 1; i <= largo - 1; i++) {
+            comasS = comasS + "0";
+        }
+        long comas = Long.parseLong(comasS); // comas se encarga de eliminar las comas del número que resulta de resto
+        long pos = 1;
+        for (long i = 1; i <= largo; i++) {
+            long cifras = num % resto;
+            if ((i < largo)) { /* Se usa comas a partir del segundo bucle */
+                cifras = cifras / comas;
                 comas = comas / 10; /* Decrementamos comas para el siguiente bucle */
             }
-            if (iultimaCifra == digito) { /* Comprueba con el dígito y */
+            if (cifras == digito) { /* Comprueba con el dígito y */
                 acum++; /* guarda la posición, las veces que ha repetido y más cosas */
-                contieneUno = iultimaCifra;
+                contieneUno = cifras;
                 contieneMas = contieneMas + contieneUno;
                 posicion = posicion + " " + pos;
             }
@@ -47,6 +54,5 @@ public class Ejercicio26 {
         } else {
             System.out.println("No coincide ningún nº");
         }
-        sc.close();
     }
 }

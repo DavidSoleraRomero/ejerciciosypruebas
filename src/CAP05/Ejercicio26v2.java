@@ -11,33 +11,46 @@ public class Ejercicio26v2 {
         System.out.print("Introduce un número: ");
         int num = sc.nextInt();
         String longitud = num + "";
+        int largo = longitud.length();
         int acum = 0;
         System.out.print("Introduce un dígito que puede estar (o no) dentro del nº anterior: ");
         int digito = sc.nextInt();
-        int contieneUno;
+        double contieneUno;
         String contieneMas = "", posicion = "";
-        int resto = 10, comas = 10, pos = longitud.length();
-        for (int i = 1; i <= longitud.length(); i++) {
+        int resto = (int) Math.pow(10, largo); /*
+                                                * resto se utiliza para ir sacando las cifras, trabaja con
+                                                * comas
+                                                */
+        int comas = (int) Math.pow(10, largo - 1); /*
+                                                    * comas se encarga de eliminar las comas del número que
+                                                    * resulta de resto
+                                                    */
+        int pos = 1;
+        for (int i = 1; i <= largo; i++) {
             int iultimaCifra = num % resto;
-            if ((i > 1)) {
+            if ((i < largo)) { /* Se usa comas a partir del segundo bucle */
                 iultimaCifra = iultimaCifra / comas;
-                comas = comas * 10;
+                comas = comas / 10; /* Decrementamos comas para el siguiente bucle */
             }
-            if (iultimaCifra == digito) {
-                acum++;
+            if (iultimaCifra == digito) { /* Comprueba con el dígito y */
+                acum++; /* guarda la posición, las veces que ha repetido y más cosas */
                 contieneUno = iultimaCifra;
                 contieneMas = contieneMas + contieneUno;
-                posicion = pos + " " + posicion;
+                posicion = posicion + " " + pos;
             }
-            resto = resto * 10;
-            pos--;
+            resto = resto / 10; /* Decrementamos resto para el siguiente bucle */
+            pos++;
         }
-        if (acum == 1) {
-            System.out.println("Coincide un nº en la posición nº " + posicion);
-        } else if (acum > 1) {
-            System.out.println("Coincide más de un nº en las posiciones " + posicion);
+        if (largo <= 9) {
+            if (acum == 1) { /* Comprobamos si es un nº repetido, varios o ninguno */
+                System.out.println("Coincide un nº en la posición nº" + posicion);
+            } else if (acum > 1) {
+                System.out.println("Coincide más de un nº en las posiciones" + posicion);
+            } else {
+                System.out.println("No coincide ningún nº");
+            }
         } else {
-            System.out.println("No coincide ningún nº");
+            System.out.println("Introduzca un número inferior a 10 cifras (no incluido)");
         }
         sc.close();
     }
