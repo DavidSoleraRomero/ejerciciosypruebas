@@ -9,6 +9,7 @@ public class Ejercicio24 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Introduce el nº con el que comenzará la pirámide: ");
         int num = sc.nextInt();
+        int acum = num;
         System.out.print("Introduce la altura de la pirámide: ");
         int altura = sc.nextInt();
         for (int i = 1; i <= altura; i++) {
@@ -16,8 +17,15 @@ public class Ejercicio24 {
                 System.out.print(" ");
             }
             for (int numeros = 1; numeros <= (i * 2) - 1; numeros++) {
-                System.out.print(num);
+                if (numeros < ((i * 2) / 2)) {
+                    System.out.print(num);
+                    num++;
+                } else {
+                    System.out.print(num);
+                    num--;
+                }
             }
+            num = acum;
             System.out.println("");
         }
         sc.close();

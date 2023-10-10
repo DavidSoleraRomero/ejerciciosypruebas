@@ -12,6 +12,5 @@ public class Ejercicio18 {
         } else {
             System.out.println("Introduzca un número inferior o igual a 5 cifras");
         }
-
     }
 }
