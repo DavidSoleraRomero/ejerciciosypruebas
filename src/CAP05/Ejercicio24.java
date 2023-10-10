@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 /* Escribe un programa que lea un número n e imprima una pirámide de números
 con n filas como en la siguiente figura: */
+/* Para comprobar si van a salir dos dígitos sumamos el nº por el que comienza
+con la altura que va a tener la pirámide */
 public class Ejercicio24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
