@@ -7,13 +7,13 @@ public class Ejercicio35 {
     public static void main(String[] args) {
         System.out.print("Introduce la altura de la X: ");
         int altura = Integer.parseInt(System.console().readLine());
-        int acum = (altura / 2) + 1;
+        int centro = (altura / 2) + 1;
         int pintar = 2;
         int pintar2 = altura - 1;
         if ((altura >= 3) && (altura % 2 != 0)) {
             for (int i = 1; i <= altura; i++) {
                 for (int asteriscos = 1; asteriscos <= altura; asteriscos++) {
-                    if (i < acum) {
+                    if (i < centro) {
                         if (i == 1) {
                             if (asteriscos == 1 | asteriscos == altura) {
                                 System.out.print("*");
@@ -21,16 +21,13 @@ public class Ejercicio35 {
                                 System.out.print(" ");
                             }
                         } else {
-                            if (asteriscos == pintar) {
-                                System.out.print("*");
-                            } else if (asteriscos == pintar2) {
+                            if (asteriscos == pintar | asteriscos == pintar2) {
                                 System.out.print("*");
                             } else {
                                 System.out.print(" ");
                             }
-
                         }
-                    } else if (i > acum) {
+                    } else if (i > centro) {
                         if (i == altura) {
                             if (asteriscos == 1 | asteriscos == altura) {
                                 System.out.print("*");
@@ -38,16 +35,14 @@ public class Ejercicio35 {
                                 System.out.print(" ");
                             }
                         } else {
-                            if (asteriscos == pintar) {
-                                System.out.print("*");
-                            } else if (asteriscos == pintar2) {
+                            if (asteriscos == pintar | asteriscos == pintar2) {
                                 System.out.print("*");
                             } else {
                                 System.out.print(" ");
                             }
                         }
                     } else {
-                        if (asteriscos == acum) {
+                        if (asteriscos == centro) {
                             System.out.print("*");
                         } else {
                             System.out.print(" ");
