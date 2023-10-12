@@ -12,7 +12,8 @@ public class Ejercicio26 {
         while (true) {
             num2 = num2 / 10;
             largo++;
-            if (num2 % 10 == 0) {
+            if ((num2 % 10 == 0) && ((num2 / 10) % 10 == 0) && ((num2 / 100) % 10 == 0)
+                    && ((num2 / 1000) % 10 == 0) && ((num2 / 10000) % 10 == 0)) {
                 break;
             }
         }
