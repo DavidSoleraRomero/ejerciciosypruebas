@@ -28,10 +28,13 @@ public class PruebaExamen2 {
         float imc2 = (peso2 / (estatura2 * estatura2)) * 10000;
 
         System.out.println("------------------------------------------------------------------------");
-        System.out.printf("| %-17s%-25s|%8s %8s %7s |\n", "Nombre", "Apellidos", "Peso", "Altura", "IMC");
+        System.out.printf("| \u001B[30m%-17s%-25s|%8s %8s %7s\u001B[0m |\n", "Nombre", "Apellidos", "Peso", "Altura",
+                "IMC");
         System.out.println("------------------------------------------------------------------------");
-        System.out.printf("| %-17s%-25s|%8.2f %8.2f %7.2f |\n", nom1, ape1, peso1, estatura1 / 100, imc1);
-        System.out.printf("| %-17s%-25s|%8.2f %8.2f %7.2f |\n", nom2, ape2, peso2, estatura2 / 100, imc2);
+        System.out.printf("| \u001B[31m%-17s%-25s|%8.2f %8.2f %7.2f\u001B[0m |\n", nom1, ape1, peso1, estatura1 / 100,
+                imc1);
+        System.out.printf("| \u001B[36m%-17s%-25s|%8.2f %8.2f %7.2f\u001B[0m |\n", nom2, ape2, peso2, estatura2 / 100,
+                imc2);
         System.out.println("------------------------------------------------------------------------");
     }
 }
