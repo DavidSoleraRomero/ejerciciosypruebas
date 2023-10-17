@@ -16,15 +16,13 @@ public class Ejercicio40 {
                     if (i <= altura / 2 + 1) {
                         if (asteriscos == pinta1 | asteriscos == pinta2) {
                             System.out.print("*");
-                        } else {
+                        } else
                             System.out.print(" ");
-                        }
                     } else {
                         if (asteriscos == pinta1 | asteriscos == pinta2) {
                             System.out.print("*");
-                        } else {
+                        } else
                             System.out.print(" ");
-                        }
                     }
                 }
                 if (i < altura / 2 + 1) {
@@ -36,8 +34,7 @@ public class Ejercicio40 {
                 }
                 System.out.println();
             }
-        } else {
+        } else
             System.out.println("Introduzca un número IMPAR y mayor que 3.");
-        }
     }
 }

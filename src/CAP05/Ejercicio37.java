@@ -7,13 +7,9 @@ public class Ejercicio37 {
         long num = Long.parseLong(System.console().readLine());
         long num2 = num;
         long largo = 0;
-        while (true) {
+        while (num2 > 0) {
             num2 = num2 / 10;
             largo++;
-            if ((num2 % 10 == 0) && ((num2 / 10) % 10 == 0) && ((num2 / 100) % 10 == 0)
-                    && ((num2 / 1000) % 10 == 0) && ((num2 / 10000) % 10 == 0)) {
-                break;
-            }
         }
         String restoS = "1";
         System.out.printf("El número %d en decimal es el ", num);

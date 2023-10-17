@@ -14,13 +14,9 @@ public class Ejercicio45 {
         long num = sc.nextLong();
         long num2 = num;
         int largo = 0;
-        while (true) {
+        while (num2 > 0) {
             num2 = num2 / 10;
             largo++;
-            if ((num2 % 10 == 0) && ((num2 / 10) % 10 == 0) && ((num2 / 100) % 10 == 0)
-                    && ((num2 / 1000) % 10 == 0) && ((num2 / 10000) % 10 == 0)) {
-                break;
-            }
         }
         System.out.print("¿En qué posición quieres reemplazar el número?: ");
         short posicion = sc.nextShort();
@@ -52,6 +48,8 @@ public class Ejercicio45 {
 
             }
             System.out.printf("El número resultante es %d", Long.parseLong(miNum));
+        } else {
+            System.out.println("Introduce una posición inferior al largo del nº.");
         }
     }
 }

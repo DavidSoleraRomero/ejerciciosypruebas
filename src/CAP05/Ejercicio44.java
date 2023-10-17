@@ -15,13 +15,9 @@ public class Ejercicio44 {
         long num = sc.nextLong();
         long num2 = num;
         int largo = 0;
-        while (true) {
+        while (num2 > 0) {
             num2 = num2 / 10;
             largo++;
-            if ((num2 % 10 == 0) && ((num2 / 10) % 10 == 0) && ((num2 / 100) % 10 == 0)
-                    && ((num2 / 1000) % 10 == 0) && ((num2 / 10000) % 10 == 0)) {
-                break;
-            }
         }
         System.out.print("¿En qué posición quieres insertarlo?: ");
         short posicion = sc.nextShort();

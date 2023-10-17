@@ -22,16 +22,14 @@ public class Ejercicio50 {
                         if ((asteriscos == 1) | (asteriscos >= 2 + espacios & asteriscos < 6 + espacios)
                                 | (asteriscos > 5 + espacios2 & asteriscos <= 5 + espacios2 + 4)) {
                             System.out.print("*");
-                        } else {
+                        } else
                             System.out.print(" ");
-                        }
                     }
                     if (i == 2) {
                         if (asteriscos == 1 | asteriscos == 2 + espacios | asteriscos == 6 + espacios2) {
                             System.out.print("*");
-                        } else {
+                        } else
                             System.out.print(" ");
-                        }
                     }
                     if (i >= 4 & i < altura) {
                         if (asteriscos == 1) {
@@ -40,15 +38,13 @@ public class Ejercicio50 {
                             System.out.print("*");
                         } else if (asteriscos == 9 + espacios2) {
                             System.out.print("*");
-                        } else {
+                        } else
                             System.out.print(" ");
-                        }
                     }
                 }
                 System.out.println();
             }
-        } else {
+        } else
             System.out.println("Introduzca una altura superior/igual a 5 y espacios superior/igual a 1.");
-        }
     }
 }

@@ -9,13 +9,9 @@ public class Ejercicio41 {
         long num = Long.parseLong(System.console().readLine());
         long num2 = num;
         int largo = 0;
-        while (true) {
+        while (num2 > 0) {
             num2 = num2 / 10;
             largo++;
-            if ((num2 % 10 == 0) && ((num2 / 10) % 10 == 0) && ((num2 / 100) % 10 == 0)
-                    && ((num2 / 1000) % 10 == 0) && ((num2 / 10000) % 10 == 0)) {
-                break;
-            }
         }
         long resto = 1;
         long comas = 1;

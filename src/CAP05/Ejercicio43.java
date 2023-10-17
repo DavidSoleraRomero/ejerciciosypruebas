@@ -13,20 +13,15 @@ public class Ejercicio43 {
         long num = Long.parseLong(System.console().readLine());
         long num2 = num;
         int largo = 0;
-        while (true) {
+        while (num2 > 0) {
             num2 = num2 / 10;
             largo++;
-            if ((num2 % 10 == 0) && ((num2 / 10) % 10 == 0) && ((num2 / 100) % 10 == 0)
-                    && ((num2 / 1000) % 10 == 0) && ((num2 / 10000) % 10 == 0)) {
-                break;
-            }
         }
         System.out.print("¿A partir de qué posición quieres partirlo?: ");
         long partir = Long.parseLong(System.console().readLine());
         if (partir <= largo & partir > 1 & largo >= 2) {
             long resto = 1;
             long comas = 1;
-
             for (int i = 1; i <= largo; i++) {
                 resto = resto * 10;
                 if (i > 1) {
@@ -56,6 +51,5 @@ public class Ejercicio43 {
             System.out.println(
                     "Introduce un Nº para partir inferior (y mayor que 1) al largo del primer Nº introducido (mayor de 2 cifras)");
         }
-
     }
 }
