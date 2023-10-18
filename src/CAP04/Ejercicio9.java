@@ -13,11 +13,11 @@ public class Ejercicio9 {
         float c = Float.parseFloat(System.console().readLine());
         double ecuacionpos = (((-(b) + Math.sqrt((b * b) - 4 * a * c)) / (2 * a)));
         double ecuacionneg = (((-(b) - Math.sqrt((b * b) - 4 * a * c)) / (2 * a)));
-        if (ecuacionpos == ecuacionneg) {
+        if (ecuacionpos == ecuacionneg)
             System.out.printf("Solo hay una solucióm real --> %.2f", ecuacionpos);
-        } else {
+        else if (a == 0 & b == 0 & c == 0)
+            System.out.println("Tiene infinitas soluciones, son todo ceros.");
+        else
             System.out.printf("La positiva da --> %.2f | La negativa da --> %.2f", ecuacionpos, ecuacionneg);
-        }
-
     }
 }

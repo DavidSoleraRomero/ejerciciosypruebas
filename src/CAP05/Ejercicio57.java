@@ -5,22 +5,26 @@ ejemplos. El usuario debe introducir la altura de la figura. */
 public class Ejercicio57 {
     public static void main(String[] args) {
         System.out.print("Introduce la altura de la pirámide: ");
-        int altura = Integer.parseInt(System.console().readLine());
-        int j = 0;
-        for (int i = altura; i >= 1; i--) {
-            for (int espacios = 1; espacios <= j; espacios++) {
-                System.out.print(" ");
-            }
-            j++;
-            for (int asteriscos = 1; asteriscos <= i; asteriscos++) {
-                if (i == altura)
-                    System.out.print("*");
-                else if (asteriscos == 1 | asteriscos == i)
-                    System.out.print("*");
-                else
+        try {
+            int altura = Integer.parseInt(System.console().readLine());
+            int j = 0;
+            for (int i = altura; i >= 1; i--) {
+                for (int espacios = 1; espacios <= j; espacios++) {
                     System.out.print(" ");
+                }
+                j++;
+                for (int asteriscos = 1; asteriscos <= i; asteriscos++) {
+                    if (i == altura)
+                        System.out.print("*");
+                    else if (asteriscos == 1 | asteriscos == i)
+                        System.out.print("*");
+                    else
+                        System.out.print(" ");
+                }
+                System.out.println();
             }
-            System.out.println();
+        } catch (Exception e) {
+            System.out.println("Introduce un número.");
         }
     }
 }

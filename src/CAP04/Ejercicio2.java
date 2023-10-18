@@ -9,12 +9,16 @@ public class Ejercicio2 {
         System.out.println("Introduce la hora actual");
         System.out.print("Hágalo sin minutos, por favor: ");
         int hora = Integer.parseInt(System.console().readLine());
-        if ((hora >= 6) && (hora <= 12)) {
-            System.out.println("Buenos días, son las " + hora);
-        } else if ((hora >= 13) && (hora <= 20)) {
-            System.out.println("Buenas tardes, son las " + hora);
+        if (hora >= 0 & hora < 24) {
+            if ((hora >= 6) && (hora <= 12)) {
+                System.out.println("Buenos días, son las " + hora);
+            } else if ((hora >= 13) && (hora <= 20)) {
+                System.out.println("Buenas tardes, son las " + hora);
+            } else {
+                System.out.println("Buenas noches, son las " + hora);
+            }
         } else {
-            System.out.println("Buenas noches, son las " + hora);
+            System.out.println("Hora introducida inválida.");
         }
     }
 }
