@@ -1,23 +1,29 @@
 package CAP05;
 
-/* Escribe un programa que pinte por pantalla la letra V. El ancho del palo de
-la V es siempre de 3 asteriscos. El usuario debe introducir la altura. La altura
-mínima es de 3 pisos. Si el usuario introduce una altura menor, el programa
-debe mostrar un mensaje de error. */
+// Programa que pinta la letra V según la altura. Su lógica es:
+// Primer bucle for de dentro para meter espacios a partir de la segunda línea
+// Segundo bucle for que calcula los espacios y los asteriscos juntos (el ancho)
+// Se calcula de esta manera debido a que los espacios van de 2 en 2 y hay mínimo 6 asteriscos
+// Habíamos puesto i*2+4 e i*2+1, pero sobraban dos espacios en la última línea de la V debido a esto
 public class Ejercicio61 {
     public static void main(String[] args) {
         System.out.print("Introduce la altura de la V: ");
         try {
             int altura = Integer.parseInt(System.console().readLine());
-            int altura2 = altura * 3;
             int j = 0;
             if (altura >= 3) {
-                for (int i = 1; i <= altura; i++) {
+                for (int i = altura; i >= 1; i--) {
                     for (int espacios = 1; espacios <= j; espacios++) {
+                        System.out.print(" ");
                     }
-                    for (int asteriscos = 1; asteriscos <= altura * 3; asteriscos++) {
-
+                    j++;
+                    for (int asteriscos = 1; asteriscos <= i * 2 + 4; asteriscos++) {
+                        if (asteriscos <= 3 | asteriscos > i * 2 + 1)
+                            System.out.print("*");
+                        else
+                            System.out.print(" ");
                     }
+                    System.out.println();
                 }
             } else
                 System.out.println("Introduce un número superior o igual a 3.");
