@@ -7,12 +7,7 @@ public class Ejercicio58 {
         System.out.print("Introduce un número para sacar la media de sus dígitos: ");
         try {
             long num = Long.parseLong(System.console().readLine());
-            long num2 = num;
-            long largo = 0;
-            while (num2 > 0) {
-                num2 /= 10;
-                largo++;
-            }
+            long largo = Funciones.largo(num);
             long copia = num;
             long acum = 0;
             for (int i = 1; i <= largo; i++) {

@@ -9,6 +9,25 @@ es afortunado o no. */
 // Al terminar, comparar ambos contadores y el más grande gana.
 public class Ejercicio62 {
     public static void main(String[] args) {
-
+        System.out.print("Introduce un número aleatorio: ");
+        long num = Long.parseLong(System.console().readLine());
+        long copia = num;
+        long bSuerte = 0;
+        long mSuerte = 0;
+        while (copia > 0) {
+            long cifra = copia % 10;
+            if (cifra == 3 | cifra == 7 | cifra == 8 | cifra == 9)
+                bSuerte++;
+            else
+                mSuerte++;
+            copia /= 10;
+        }
+        if (bSuerte == mSuerte)
+            System.out.printf(
+                    "Has introducido la misma cantidad de números de la mala y de la buena suerte. \nProbablemente NO es afortunado.");
+        else if (bSuerte > mSuerte)
+            System.out.printf("Has introducido un número afortunado, el %d", num);
+        else
+            System.out.printf("Has introducido un número NO afortunado, el %d", num);
     }
 }

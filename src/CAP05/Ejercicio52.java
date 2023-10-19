@@ -8,17 +8,9 @@ public class Ejercicio52 {
     public static void main(String[] args) {
         System.out.print("Introduce un número para pasar el primer número a ser el último: ");
         long num = Long.parseLong(System.console().readLine());
-        long num2 = num;
-        short largo = 0;
-        long resto = 1;
-        long comas = 1;
-        while (num2 > 0) {
-            num2 /= 10;
-            largo++;
-            resto = resto * 10;
-            if (num2 == 0)
-                comas = resto / 10;
-        }
+        long largo = Funciones.largo(num);
+        long comas = Funciones.sacaComas(largo);
+        long resto = Funciones.sacaResto(largo);
         String numCompleto = "";
         short guardaN = 0;
         for (short i = 1; i <= largo; i++) {

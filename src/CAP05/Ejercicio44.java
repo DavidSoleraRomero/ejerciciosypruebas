@@ -11,43 +11,36 @@ primero admite números más largos. */
 public class Ejercicio44 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Introduce un número: ");
-        long num = sc.nextLong();
-        long num2 = num;
-        int largo = 0;
-        while (num2 > 0) {
-            num2 = num2 / 10;
-            largo++;
-        }
-        System.out.print("¿En qué posición quieres insertarlo?: ");
-        short posicion = sc.nextShort();
-        System.out.print("¿Qué número quieres introducir?: ");
-        short introduce = sc.nextShort();
-        sc.close();
-        if (posicion <= largo) {
-            long resto = 1;
-            long comas = 1;
-            for (int i = 1; i <= largo; i++) {
-                resto = resto * 10;
-                if (i > 1) {
-                    comas = comas * 10;
+        try {
+            System.out.print("Introduce un número: ");
+            long num = sc.nextLong();
+            long largo = Funciones.largo(num);
+            System.out.print("¿En qué posición quieres insertarlo?: ");
+            short posicion = sc.nextShort();
+            System.out.print("¿Qué número quieres introducir?: ");
+            short introduce = sc.nextShort();
+            sc.close();
+            if (posicion <= largo) {
+                long resto = Funciones.sacaResto(largo);
+                long comas = Funciones.sacaComas(largo);
+                String miNum = "";
+                for (int i = 1; i <= largo; i++) {
+                    if (i < posicion | i > posicion) {
+                        long cifra = num % resto;
+                        if (i < largo) {
+                            cifra = cifra / comas;
+                            comas = comas / 10;
+                        }
+                        miNum = miNum + cifra;
+                        resto = resto / 10;
+                    } else
+                        miNum = miNum + introduce;
                 }
-            }
-            String miNum = "";
-            for (int i = 1; i <= largo; i++) {
-                if (i < posicion | i > posicion) {
-                    long cifra = num % resto;
-                    if (i < largo) {
-                        cifra = cifra / comas;
-                        comas = comas / 10;
-                    }
-                    miNum = miNum + cifra;
-                    resto = resto / 10;
-                } else {
-                    miNum = miNum + introduce;
-                }
-            }
-            System.out.printf("El número resultante es %d", Long.parseLong(miNum));
+                System.out.printf("El número resultante es %d", Long.parseLong(miNum));
+            } else
+                System.out.println("Introduce un número inferior al largo.");
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error.");
         }
     }
 }

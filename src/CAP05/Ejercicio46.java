@@ -17,25 +17,22 @@ public class Ejercicio46 {
             for (int i = 1; i <= altura; i++) {
                 for (int asteriscos = 1; asteriscos <= anchura * 2 - 1; asteriscos++) {
                     if (i == 1 | i == altura) {
-                        if (asteriscos % 2 == 0) {
+                        if (asteriscos % 2 == 0)
                             System.out.print(" ");
-                        } else {
+                        else
                             System.out.print("*");
-                        }
                     } else {
-                        if (asteriscos == 1 | asteriscos == anchura * 2 - 1) {
+                        if (asteriscos == 1 | asteriscos == anchura * 2 - 1)
                             System.out.print("*");
-                        } else {
+                        else
                             System.out.print(" ");
-                        }
                     }
 
                 }
                 System.out.println();
             }
-        } else {
+        } else
             System.out.println("Lo siento, debe introducir la altura / anchura mínima ESPECIFICADA (2)");
-        }
         sc.close();
     }
 }
