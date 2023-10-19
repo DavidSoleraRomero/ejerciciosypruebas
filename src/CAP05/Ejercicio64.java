@@ -22,10 +22,11 @@ public class Ejercicio64 {
                     ancho++;
                     break;
                 case 2:
-                    if (ancho != 2 | altura !2) {
-                    altura--;
-                    ancho--;
-                    }
+                    if (ancho != 2 & altura != 2) {
+                        altura--;
+                        ancho--;
+                    } else
+                        System.out.println("No puede tener una altura / anchura inferior a 2.");
                     break;
                 case 3:
                     int c = altura;
