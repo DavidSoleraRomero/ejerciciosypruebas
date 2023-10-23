@@ -7,7 +7,7 @@ y si acertamos se nos dirá “La caja fuerte se ha abierto satisfactoriamente�
 Tendremos cuatro oportunidades para abrir la caja fuerte. */
 public class Ejercicio7 {
     public static void main(String[] args) {
-        int codCaja = 4321;
+        int codCaja = 0001;
         for (int i = 3; i >= 0; i--) {
             System.out.println("Introduce el código, tienes " + (i + 1) + " intentos.");
             int acceso = Integer.parseInt(System.console().readLine());
@@ -18,6 +18,9 @@ public class Ejercicio7 {
             } else {
                 System.out.println("Código INCORRECTO, " + i + " intentos restantes.");
             }
+            if (acceso != codCaja & i == 0)
+                System.out.println("Lo siento, te quedaste sin intentos.");
         }
+
     }
 }

@@ -16,11 +16,9 @@ public class Ejercicio23 {
         String tipoIva = System.console().readLine();
         System.out.print("Introduce el código promocional (nopro, mitad, meno5, 5porc): ");
         String promo = System.console().readLine();
-
         float precioIva;
         float iva;
         String porcentaje;
-
         switch (tipoIva.toLowerCase()) {
             case "general":
                 iva = 0.21f;

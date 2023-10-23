@@ -4,10 +4,9 @@ public class Funciones {
 
     /* Calcula el largo de un número */
     public static long largo(long num) {
-        long copia = num;
         long largo = 0;
-        while (copia > 0) {
-            copia /= 10;
+        while (num > 0) {
+            num /= 10;
             largo++;
         }
         return largo;
