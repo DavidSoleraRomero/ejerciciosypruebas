@@ -9,7 +9,7 @@ suman 2, 3 o 12, el jugador pierde todo su dinero y termina la partida. Si no se
 da ninguno de los casos anteriores, es decir si sale 4, 5, 6, 8, 9 o 10, el juego
 entra en una segunda etapa. En esta etapa, el jugador buscará volver a obtener
 ese número en los dados. Si consigue repetir ese número, gana. Si sale un 7,
-pierde. Si sale otro número, tiene que seguir tirando. */
+pierde. Si sale otro número, debe seguir tirando. */
 public class Ejercicio31 {
     public static void main(String[] args) {
 
