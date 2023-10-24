@@ -32,9 +32,8 @@ public class Ejercicio27 {
                     } else if (compite2.equals("tijeras")) {
                         System.out.println("Felicidades usuario, has ganado");
                         ganador = true;
-                    } else {
+                    } else
                         System.out.println("Empate, volvemos a empezar.");
-                    }
                 } else if (compite1.toLowerCase().equals("papel")) {
                     if (compite2.equals("tijeras")) {
                         System.out.println("Lo sentimos usuario, has perdido");
@@ -42,9 +41,8 @@ public class Ejercicio27 {
                     } else if (compite2.equals("piedra")) {
                         System.out.println("Felicidades usuario, has ganado");
                         ganador = true;
-                    } else {
+                    } else
                         System.out.println("Empate, volvemos a empezar.");
-                    }
                 } else if (compite1.toLowerCase().equals("tijeras")) {
                     if (compite2.equals("piedra")) {
                         System.out.println("Lo sentimos usuario, has perdido");
@@ -52,12 +50,10 @@ public class Ejercicio27 {
                     } else if (compite2.equals("papel")) {
                         System.out.println("Felicidades usuario, has ganado");
                         ganador = true;
-                    } else {
+                    } else
                         System.out.println("Empate, volvemos a empezar.");
-                    }
-                } else {
+                } else
                     System.out.println("Opción inválida introducida por el usuario");
-                }
             }
         } catch (Exception e) {
             System.out.println("Se ha producido un error.");
