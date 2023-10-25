@@ -9,7 +9,7 @@ public class Ejercicio19 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Introduce con qué carácter quieres pintar a continuación: ");
-        String caracter = sc.nextLine();
+        String caracter = "" + sc.nextLine().charAt(0);
         System.out.print("Introduce la altura de la pirámide: ");
         int altura = sc.nextInt();
         for (int i = 1; i <= altura; i++) {
