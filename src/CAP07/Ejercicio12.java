@@ -36,17 +36,13 @@ public class Ejercicio12 {
                 }
                 System.out.println("Array original: ");
                 System.out.printf("%-9s %4d %4d %4d %4d %4d %4d %4d %4d %4d %4d\n%9s ", "Índice", 0, 1, 2, 3, 4, 5, 6,
-                        7, 8,
-                        9,
-                        "Contenido");
+                        7, 8, 9, "Contenido");
                 for (int i : numeros) {
                     System.out.printf("%4d ", i);
                 }
                 System.out.println("\nArray organizado: ");
                 System.out.printf("%-9s %4d %4d %4d %4d %4d %4d %4d %4d %4d %4d\n%9s ", "Índice", 0, 1, 2, 3, 4, 5, 6,
-                        7, 8,
-                        9,
-                        "Contenido");
+                        7, 8, 9, "Contenido");
                 for (int i : organiza) {
                     System.out.printf("%4d ", i);
                 }
