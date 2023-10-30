@@ -17,36 +17,31 @@ public class Ejercicio35 {
                         if (i == 1) {
                             if (asteriscos == 1 | asteriscos == altura) {
                                 System.out.print("*");
-                            } else {
+                            } else
                                 System.out.print(" ");
-                            }
                         } else {
                             if (asteriscos == pintar | asteriscos == pintar2) {
                                 System.out.print("*");
-                            } else {
+                            } else
                                 System.out.print(" ");
-                            }
                         }
                     } else if (i > centro) {
                         if (i == altura) {
                             if (asteriscos == 1 | asteriscos == altura) {
                                 System.out.print("*");
-                            } else {
+                            } else
                                 System.out.print(" ");
-                            }
                         } else {
                             if (asteriscos == pintar | asteriscos == pintar2) {
                                 System.out.print("*");
-                            } else {
+                            } else
                                 System.out.print(" ");
-                            }
                         }
                     } else {
                         if (asteriscos == centro) {
                             System.out.print("*");
-                        } else {
+                        } else
                             System.out.print(" ");
-                        }
                     }
                 }
                 if ((i != 1) && (i != altura) && (i != (altura / 2) + 1) && !(i > (altura / 2) + 1)) {
@@ -58,8 +53,7 @@ public class Ejercicio35 {
                 }
                 System.out.println();
             }
-        } else {
+        } else
             System.out.println("Introduce un número superior o igual a 3 y que sea IMPAR.");
-        }
     }
 }

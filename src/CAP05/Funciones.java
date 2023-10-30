@@ -89,4 +89,14 @@ public class Funciones {
             nums++;
         }
     }
+
+    /* Llama a la entrada para un ENTERO */
+    public static int entradaInt() {
+        return Integer.parseInt(System.console().readLine());
+    }
+
+    /* Llama a la entrada para un STRING */
+    public static String entradaString() {
+        return System.console().readLine();
+    }
 }

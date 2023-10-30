@@ -11,17 +11,17 @@ public class Ejercicio23 {
         Scanner sc = new Scanner(System.in);
         int cont = 0;
         int suma = 0;
-        while (true & !(suma > 10000)) {
+        while ((suma <= 10000)) {
             System.out.print("Introduce un número para sumar: ");
             int num = sc.nextInt();
             suma = num + suma;
             cont++;
         }
         System.out.println("-------------------------------------");
-        System.out.printf("%-28s %7d\n", "Suma de los números", suma);
-        System.out.printf("%-28s %7d\n", "Contador de nº introducidos", cont);
+        System.out.printf("%-27s %8d\n", "Suma de los números", suma);
+        System.out.printf("%-27s %8d\n", "Contador de nº introducidos", cont);
         System.out.println("-------------------------------------");
-        System.out.printf("%-28s %7.2f\n", "Media", ((float) suma / (float) cont));
+        System.out.printf("%-27s %8.2f\n", "Media", ((float) suma / (float) cont));
         sc.close();
     }
 }
