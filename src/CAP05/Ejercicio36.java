@@ -11,33 +11,17 @@ public class Ejercicio36 {
         try {
             long num = Long.parseLong(System.console().readLine());
             long largo = Funciones.largo(num);
-            long comas = Funciones.sacaComas(largo);
-            long resto = Funciones.sacaResto(largo);
-            long primeraMitad = 0;
-            long segundaMitad = 0;
+            long copia = num;
+            long reverso = 0;
             for (long i = 1; i <= largo; i++) {
-                long cifras = num % resto;
-                if ((i < largo)) { /* Se usa comas a partir del segundo bucle */
-                    cifras = cifras / comas;
-                    comas = comas / 10; /* Decrementamos comas para el siguiente bucle */
-                }
-                if (largo % 2 == 0) {
-                    if (i <= largo / 2)
-                        primeraMitad = primeraMitad + cifras;
-                    else
-                        segundaMitad = segundaMitad + cifras;
-                } else {
-                    if (i <= largo / 2)
-                        primeraMitad = primeraMitad + cifras;
-                    else if (i >= (largo / 2) + 2)
-                        segundaMitad = segundaMitad + cifras;
-                }
-                resto = resto / 10; /* Decrementamos resto para el siguiente bucle */
+                long cifras = copia % 10;
+                reverso = reverso * 10 + cifras;
+                copia /= 10;
             }
-            if (primeraMitad == segundaMitad)
-                System.out.printf("El número %d es capícua.", num);
+            if (reverso + num == num * 2)
+                System.out.printf("El número %d es capicúa.", num);
             else
-                System.out.printf("El número %d no es capícua.", num);
+                System.out.printf("El número %d no es capicúa.", num);
         } catch (Exception e) {
             System.out.println("Ha ocurrido un error.");
         }

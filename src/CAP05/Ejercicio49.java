@@ -13,8 +13,8 @@ public class Ejercicio49 {
         boolean salida = true;
         long acum = 0;
         int cont = 0;
-        long min = 999999999;
-        long max = 0;
+        long min = Long.MAX_VALUE;
+        long max = Long.MIN_VALUE;
         while (salida) {
             System.out.print("Introduce números para sumarlos: ");
             long num = sc.nextLong();

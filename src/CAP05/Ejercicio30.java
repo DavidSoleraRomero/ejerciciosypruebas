@@ -24,7 +24,7 @@ public class Ejercicio30 {
                 case "2", "martes":
                     numDia = 2;
                     break;
-                case "3", "miercoles":
+                case "3", "miercoles", "miércoles":
                     numDia = 3;
                     break;
                 case "4", "jueves":
@@ -33,7 +33,7 @@ public class Ejercicio30 {
                 case "5", "viernes":
                     numDia = 5;
                     break;
-                case "6", "sabado":
+                case "6", "sabado", "sábado":
                     numDia = 6;
                     break;
                 case "7", "domingo":
@@ -46,9 +46,8 @@ public class Ejercicio30 {
             }
             if (i == 1) {
                 dia1 = (byte) numDia;
-            } else {
+            } else
                 dia2 = (byte) numDia;
-            }
         }
         if ((dia2 >= dia1) && (dia1 < 8 | dia2 < 8)) {
             System.out.print("Introduce la hora del primer día: ");
@@ -62,23 +61,19 @@ public class Ejercicio30 {
                     horas = horas + ((24 - hora1) + hora2);
                     i++;
                 } else if (dia1 == dia2) {
-                    if (hora1 < hora2) {
+                    if (hora1 < hora2)
                         horas = horas + (hora2 - hora1);
-                    } else {
+                    else
                         horas = 0;
-                    }
-                } else {
+                } else
                     horas = horas + 24;
-                }
             }
             if (horas != 0) {
                 System.out.printf("Quedan %d horas hasta el día introducido.", horas);
-            } else {
+            } else
                 System.out.println("Es la misma hora o inferior");
-            }
-        } else {
-            System.out.println("El segundo día introducido no puede ser anterior al primero ni estar fuera del rango");
-            System.out.println("Rango --> (1-7 o Lunes-Domingo)");
-        }
+        } else
+            System.out.println(
+                    "El segundo día introducido no puede ser anterior al primero ni estar fuera del rango\nRango --> (1-7 o Lunes-Domingo)");
     }
 }

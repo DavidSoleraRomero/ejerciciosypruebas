@@ -14,48 +14,14 @@ public class Ejercicio34 {
         long num = Long.parseLong(System.console().readLine());
         System.out.print("Introduce el segundo número: ");
         long num2 = Long.parseLong(System.console().readLine());
-        long numLargo = num;
-        long numLargo2 = num2;
-        long largo = 0;
-        while (true) {
-            numLargo = numLargo / 10;
-            largo++;
-            if ((numLargo % 10 == 0) && ((numLargo / 10) % 10 == 0) && ((numLargo / 100) % 10 == 0)
-                    && ((numLargo / 1000) % 10 == 0) && ((numLargo / 10000) % 10 == 0)) {
-                break;
-            }
-        }
-        long largo2 = 0;
-        while (true) {
-            numLargo2 = numLargo2 / 10;
-            largo2++;
-            if ((numLargo2 % 10 == 0) && ((numLargo2 / 10) % 10 == 0) && ((numLargo2 / 100) % 10 == 0)
-                    && ((numLargo2 / 1000) % 10 == 0) && ((numLargo2 / 10000) % 10 == 0)) {
-                break;
-            }
-        }
+        long largo = Funciones.largo(num);
+        long largo2 = Funciones.largo(num2);
         String paresS = "";
         String imparesS = "";
-        String restoS = "1";
-        String comasS = "1";
-        for (long i = 1; i <= largo; i++) {
-            restoS = restoS + "0";
-            if (i > 1) {
-                comasS = comasS + "0";
-            }
-        }
-        String restoS2 = "1";
-        String comasS2 = "1";
-        for (long i = 1; i <= largo2; i++) {
-            restoS2 = restoS2 + "0";
-            if (i > 1) {
-                comasS2 = comasS2 + "0";
-            }
-        }
-        long resto = Long.parseLong(restoS); /* resto se utiliza para ir sacando las cifras, trabaja con comas */
-        long comas = Long.parseLong(comasS); // comas se encarga de eliminar las comas del número que resulta de resto
-        long resto2 = Long.parseLong(restoS2);
-        long comas2 = Long.parseLong(comasS2);
+        long resto = Funciones.sacaResto(largo);
+        long comas = Funciones.sacaComas(largo);
+        long resto2 = Funciones.sacaResto(largo2);
+        long comas2 = Funciones.sacaComas(largo2);
         for (long i = 1; i <= largo; i++) {
             long cifras = num % resto;
             if ((i < largo)) { /* Se usa comas a partir del segundo bucle */
@@ -64,9 +30,8 @@ public class Ejercicio34 {
             }
             if (cifras % 2 == 0) {
                 paresS = paresS + "" + cifras;
-            } else {
+            } else
                 imparesS = imparesS + "" + cifras;
-            }
             resto = resto / 10; /* Decrementamos resto para el siguiente bucle */
         }
         for (long i = 1; i <= largo2; i++) {
@@ -77,9 +42,8 @@ public class Ejercicio34 {
             }
             if (cifras % 2 == 0) {
                 paresS = paresS + "" + cifras;
-            } else {
+            } else
                 imparesS = imparesS + "" + cifras;
-            }
             resto2 = resto2 / 10; /* Decrementamos resto para el siguiente bucle */
         }
         System.out.println("El número formado por dígitos pares: " + paresS);

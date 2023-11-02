@@ -22,7 +22,7 @@ public class Ejercicio1 {
         }
         System.out.print("\n*******************************************************************************");
         for (int i = 0; i < 3; i++) {
-            System.out.print("\nFila" + i + "  ");
+            System.out.print("\nFila " + i + " ");
             for (int j = 0; j < 6; j++) {
                 System.out.printf("  %10d", numeros[i][j]);
             }
