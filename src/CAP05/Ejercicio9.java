@@ -13,15 +13,10 @@ public class Ejercicio9 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Introduce un nº para ver cuántas cifras tiene: ");
         long num = sc.nextLong();
-        boolean i = true;
         byte acum = 1;
-        while (i) {
-            if (num / 10 != 0) {
-                num = num / 10;
-                acum++;
-            } else {
-                i = false;
-            }
+        while (num / 10 != 0) {
+            num = num / 10;
+            acum++;
         }
         System.out.printf("El número tiene %d cifras.", acum);
         sc.close();
