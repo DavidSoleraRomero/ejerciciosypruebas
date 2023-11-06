@@ -14,17 +14,10 @@ public class Ejercicio40 {
                 int pinta2 = altura / 2 + 1;
                 for (int i = 1; i <= altura; i++) {
                     for (int asteriscos = 1; asteriscos <= altura; asteriscos++) {
-                        if (i <= altura / 2 + 1) {
-                            if (asteriscos == pinta1 | asteriscos == pinta2) {
-                                System.out.print("*");
-                            } else
-                                System.out.print(" ");
-                        } else {
-                            if (asteriscos == pinta1 | asteriscos == pinta2) {
-                                System.out.print("*");
-                            } else
-                                System.out.print(" ");
-                        }
+                        if (asteriscos == pinta1 | asteriscos == pinta2) {
+                            System.out.print("*");
+                        } else
+                            System.out.print(" ");
                     }
                     if (i < altura / 2 + 1) {
                         pinta1--;

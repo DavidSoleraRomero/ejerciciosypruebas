@@ -99,4 +99,16 @@ public class Funciones {
     public static String entradaString() {
         return System.console().readLine();
     }
+
+    /* Voltea el número entregado como parámetro */
+    public static long voltea(long num) {
+        long nuevoNum = 0;
+        long largo = Funciones.largo(num);
+        for (int i = 1; i <= largo; i++) {
+            long cifra = num % 10;
+            num /= 10;
+            nuevoNum = nuevoNum * 10 + cifra;
+        }
+        return nuevoNum;
+    }
 }

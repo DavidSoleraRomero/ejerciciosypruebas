@@ -32,13 +32,13 @@ public class Ejercicio50 {
                             System.out.print(" ");
                     }
                     if (i >= 4 & i < altura) {
-                        if (asteriscos == 1) {
+                        if (asteriscos == 1)
                             System.out.print("*");
-                        } else if (asteriscos == 5 + espacios) {
+                        else if (asteriscos == 5 + espacios)
                             System.out.print("*");
-                        } else if (asteriscos == 9 + espacios2) {
+                        else if (asteriscos == 9 + espacios2)
                             System.out.print("*");
-                        } else
+                        else
                             System.out.print(" ");
                     }
                 }

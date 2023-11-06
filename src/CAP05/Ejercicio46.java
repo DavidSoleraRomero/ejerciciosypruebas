@@ -27,7 +27,6 @@ public class Ejercicio46 {
                         else
                             System.out.print(" ");
                     }
-
                 }
                 System.out.println();
             }
