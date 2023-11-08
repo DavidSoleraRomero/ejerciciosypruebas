@@ -9,6 +9,13 @@
             "name": "Ejercicio63v2",
             "request": "launch",
             "mainClass": "CAP05.Ejercicio63v2",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio63v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio63v2",
             "projectName": "ejerciciosypruebas_371a6158"
         },
         {

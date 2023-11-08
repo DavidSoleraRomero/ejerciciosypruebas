@@ -36,21 +36,23 @@ public class Ejercicio63v2 {
                     }
                 } else {
                     if (alt1 - 1 >= mayor - i) {
-                        for (int esp1 = 1; esp1 <= mayor - i; esp1++) {
+                        for (int esp1 = 1; esp1 <= alt1 - aux; esp1++) {
                             System.out.print(" ");
                         }
-                        for (int ast1 = 1; ast1 <= i * 2 - 1; ast1++) {
+                        for (int ast1 = 1; ast1 <= aux * 2 - 1; ast1++) {
                             System.out.print("*");
                         }
-                    }
-                    if (alt1 - i != 0)
-                        System.out.printf("%-" + (alt1 + 1 - i) + "s", " ");
-                    else
+                        if (alt1 + 1 - aux != 0)
+                            System.out.printf("%-" + (alt1 + 1 - aux) + "s", " ");
+                        else
+                            System.out.print(" ");
+                        aux++;
+                    } else
+                        System.out.printf("%-" + (alt1 * 2) + "s", " ");
+                    for (int esp2 = 1; esp2 <= alt2 - i; esp2++) {
                         System.out.print(" ");
-                    for (int esp2 = 1; esp2 <= alt2 - aux; esp2++) {
-                        System.out.print(" ");
                     }
-                    for (int ast2 = 1; ast2 <= aux * 2 - 1; ast2++) {
+                    for (int ast2 = 1; ast2 <= i * 2 - 1; ast2++) {
                         System.out.print("*");
                     }
                 }
