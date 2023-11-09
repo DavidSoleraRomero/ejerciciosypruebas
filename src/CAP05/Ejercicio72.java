@@ -15,19 +15,21 @@ public class Ejercicio72 {
                     Funciones.espaciosI(i);
                     Funciones.asteriscosI(alt1, i);
                     if (i <= alt2) {
-                        if (i != 1) {
-                            int espacios = i;
-                            System.out.printf("%-" + espacios + "s", " ");
-                        } else
-                            System.out.print(" ");
+                        System.out.printf("%-" + i + "s", " ");
                         Funciones.espaciosI(cont);
                         Funciones.asteriscosI(alt2, cont);
                         cont++;
                     }
                 } else {
-                    if (i <= alt2) {
-
-                    }
+                    if (i <= alt1) {
+                        Funciones.espaciosI(cont);
+                        Funciones.asteriscosI(alt1, cont);
+                        cont++;
+                        System.out.printf("%-" + i + "s", " ");
+                    } else
+                        System.out.printf("%-" + (alt1 * 2) + "s", " ");
+                    Funciones.espaciosI(i);
+                    Funciones.asteriscosI(alt2, i);
                 }
                 System.out.println();
             }
