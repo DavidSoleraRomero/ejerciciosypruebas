@@ -111,4 +111,38 @@ public class Funciones {
         }
         return nuevoNum;
     }
+
+    /* Pinta espacios para una pirámide */
+    public static void espacios(int altura, int i) {
+        for (int j = 1; j <= altura - i; j++) {
+            System.out.print(" ");
+        }
+    }
+
+    /* Pinta asteriscos para una pirámide */
+    public static void asteriscos(int i) {
+        for (int j = 1; j <= i * 2 - 1; j++) {
+            System.out.print("*");
+        }
+    }
+
+    /* Pinta espacios para una pirámide invertida */
+    public static void espaciosI(int i) {
+        for (int j = 1; j < i; j++) {
+            System.out.print(" ");
+        }
+    }
+
+    /* Pinta asteriscos para una pirámide invertida */
+    public static void asteriscosI(int altura, int i) {
+        altura = altura - (i - 1);
+        for (int j = 1; j <= altura * 2 - 1; j++) {
+            System.out.print("*");
+        }
+    }
+
+    /* Comprueba, entre 2 num, el más alto */
+    public static int mayor(int num1, int num2) {
+        return (num1 >= num2) ? num1 : num2;
+    }
 }

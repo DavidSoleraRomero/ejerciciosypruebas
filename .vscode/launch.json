@@ -6,6 +6,76 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio72",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio72",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio71",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio71",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio70",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio70",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio69v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio69v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio68v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio68v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio67v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio67v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio66v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio66v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio65v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio65v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio64v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio64v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio63v3",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio63v3",
+            "projectName": "ejerciciosypruebas_371a6158"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio63v2",
             "request": "launch",
             "mainClass": "CAP05.Ejercicio63v2",
