@@ -42,7 +42,7 @@ public class EjercicioCartav2 {
             } else
                 System.out.println("El máximo era de 200 carácteres");
         } catch (Exception e) {
-            System.out.println("Se ha producido un error, se esperaba un nº entero.");
+            System.out.println("Se ha producido un error inesperado.");
         }
     }
 }

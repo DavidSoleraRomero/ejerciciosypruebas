@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio63",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio63",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioDerecha",
+            "request": "launch",
+            "mainClass": "CAP05.EjercicioDerecha",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
             "name": "EjercicioCartav2",
             "request": "launch",
             "mainClass": "CAP05.EjercicioCartav2",
