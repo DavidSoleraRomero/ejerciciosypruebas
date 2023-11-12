@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio69v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio69v2",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioPirMaya",
+            "request": "launch",
+            "mainClass": "CAP05.EjercicioPirMaya",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioEscaleras",
+            "request": "launch",
+            "mainClass": "CAP05.EjercicioEscaleras",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioPirInv",
+            "request": "launch",
+            "mainClass": "CAP05.EjercicioPirInv",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioPrimos",
+            "request": "launch",
+            "mainClass": "CAP05.EjercicioPrimos",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio63v4",
             "request": "launch",
             "mainClass": "CAP05.Ejercicio63v4",
