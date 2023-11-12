@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Ejercicio69v2",
             "request": "launch",
             "mainClass": "CAP05.Ejercicio69v2",
@@ -38,6 +39,12 @@
             "request": "launch",
             "mainClass": "CAP05.EjercicioPrimos",
             "projectName": "ejerciciosypruebas_8cb9b849"
+=======
+            "name": "Ejercicio45v2",
+            "request": "launch",
+            "mainClass": "CAP05.Ejercicio45v2",
+            "projectName": "ejerciciosypruebas_371a6158"
+>>>>>>> fc4dff6372b3f4f59e0504811263cc10b3431d2b
         },
         {
             "type": "java",
