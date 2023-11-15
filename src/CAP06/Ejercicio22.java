@@ -23,7 +23,6 @@ public class Ejercicio22 {
                             else
                                 System.out.print(" ");
                         } else {
-
                             if (pintar == ancho)
                                 System.out.print("*");
                             else
