@@ -30,7 +30,7 @@ public class Ejercicio32v2 {
                         System.out.print(" ");
                 }
                 System.out.println();
-                Thread.sleep(150);
+                Thread.sleep(100);
                 espacios = (int) (Math.random() * 3 + (espacios - 1));
                 acum++;
             } while (acum <= longitud);

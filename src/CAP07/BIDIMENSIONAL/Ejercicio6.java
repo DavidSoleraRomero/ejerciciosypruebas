@@ -36,7 +36,7 @@ public class Ejercicio6 {
             for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < 10; j++) {
                     System.out.print(numeros[i][j] + " ");
-                    Thread.sleep(37);
+                    Thread.sleep(45);
                 }
             }
             System.out.printf("\nEl número máximo es: %4d, en la posición %s del Array\n", max, posMax);
