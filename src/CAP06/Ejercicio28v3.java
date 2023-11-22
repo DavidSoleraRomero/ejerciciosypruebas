@@ -1,7 +1,5 @@
 package CAP06;
 
-import CAP05.Funciones;
-
 /* Mostrar la palabra HOLA con asteriscos. Altura nº impar aleatorio entre 3 y 33.
  * Los palos de la A y la H están justo a la mitad de la altura. La anchura siempre es la misma (6) */
 public class Ejercicio28v3 {
