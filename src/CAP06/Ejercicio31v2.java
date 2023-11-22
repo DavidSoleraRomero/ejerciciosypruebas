@@ -15,7 +15,7 @@ public class Ejercicio31v2 {
             int dado2 = (int) (Math.random() * 6 + 1);
             int suma = dado1 + dado2;
             System.out.println("Dado 1: " + dado1 + "\nDado 2: " + dado2 + "\nSuma: " + suma + "\n---");
-            Thread.sleep(550);
+            Thread.sleep(700);
             if (suma == 7 | suma == 11)
                 System.out.printf("Felicidades, has ganado %d euros\n---", apuesta * 2);
             else if (suma == 2 | suma == 3 | suma == 12)
@@ -23,7 +23,7 @@ public class Ejercicio31v2 {
             else {
                 int numObtenido = suma;
                 System.out.println("Entrando en la segunda etapa del juego... Obtuviste la suma de " + suma + "\n---");
-                Thread.sleep(750);
+                Thread.sleep(850);
                 do {
                     dado1 = (int) (Math.random() * 6 + 1);
                     dado2 = (int) (Math.random() * 6 + 1);
