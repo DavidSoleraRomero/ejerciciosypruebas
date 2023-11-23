@@ -37,7 +37,7 @@ public class Ejercicio28v2 {
         for (int i = 0; i <= 13; i++) {
             System.out.printf(" %10s", ("Columna " + i));
         }
-        System.out.printf("%-21s", " ");
+        System.out.printf("%-22s", " ");
         for (int i : aux) {
             System.out.printf("%11d", i);
         }

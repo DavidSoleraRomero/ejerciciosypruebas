@@ -24,7 +24,7 @@ public class Ejercicio22v2 {
                 for (int j = 1; j <= anterior; j++) {
                     System.out.print(" ");
                 }
-                System.out.print("*\n");
+                System.out.print("#\n");
             }
         } catch (Exception e) {
             System.out.println("Error inesperado.");
