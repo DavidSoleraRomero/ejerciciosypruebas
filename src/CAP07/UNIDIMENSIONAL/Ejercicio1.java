@@ -14,7 +14,7 @@ public class Ejercicio1 {
         num[8] = 5;
         num[9] = 120;
         for (int i = 0; i < num.length; i++) {
-            System.out.println(num[i]);
+            System.out.print(num[i] + " ");
         }
         /* Las posiciones no asignadas pasan a ser 0 */
     }

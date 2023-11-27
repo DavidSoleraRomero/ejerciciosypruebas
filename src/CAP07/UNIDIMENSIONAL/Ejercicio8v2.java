@@ -7,15 +7,21 @@ de asteriscos o cualquier otro carácter. */
 public class Ejercicio8v2 {
     public static void main(String[] args) {
         int year = (int) (Math.random() * 24 + 2000);
-        System.out.printf("Mostrando la temperatura media del año %d", year);
+        System.out.printf("Mostrando la temperatura media del año %d\n", year);
         int[] temperaturas = new int[12];
         for (int i = 0; i < temperaturas.length; i++) {
-            System.out.print("Temperatura del mes " + i + ": ");
-            temperaturas[i] = Integer.parseInt(System.console().readLine());
+            temperaturas[i] = (int) (Math.random() * 45 + 1);
+            System.out.println("Temperatura del mes " + (i + 1) + ": " + temperaturas[i]);
         }
-        System.out.printf("%-11s", "Mes");
-        PENDIENTE
-        System.out.printf("%-11s", "Temperatura");
+        System.out.printf("\n%-11s", "Mes");
+        for (int i = 0; i < temperaturas.length; i++) {
+            System.out.printf(" |%11s", muestraMeses(i + 1));
+        }
+        System.out.printf(" |\n%-11s", "Temperatura");
+        for (int i = 0; i < temperaturas.length; i++) {
+            System.out.printf(" |%11d", temperaturas[i]);
+        }
+        System.out.println(" |");
     }
 
     public static String muestraMeses(int i) {
