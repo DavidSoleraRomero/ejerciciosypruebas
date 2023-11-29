@@ -16,7 +16,7 @@ public class Prueba {
     }
 
     private static void updateProgressBar(int progress, int total) {
-        int barLength = 50;
+        int barLength = 20;
         int currentLength = (int) (((double) progress / total) * barLength);
 
         StringBuilder progressBar = new StringBuilder("[");
