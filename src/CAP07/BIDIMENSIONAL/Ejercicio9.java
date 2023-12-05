@@ -7,6 +7,27 @@ cuadrada una posición en el sentido de las agujas del reloj. La matriz debe ten
 con los números convenientemente alineados. */
 public class Ejercicio9 {
     public static void main(String[] args) {
+        try {
+            int[][] matriz = new int[12][12];
+            for (int i = 0; i < 12; i++) {
+                for (int j = 0; j < 12; j++) {
+                    matriz[i][j] = (int) (Math.random() * 101);
+                }
+            }
+            pintaMatriz(matriz);
+            pendiente
+        } catch (Exception e) {
+            System.out.println("\nError inesperado");
+        }
+    }
 
+    public static void pintaMatriz(int matriz[][]) {
+        System.out.print("Array original: ");
+        for (int i = 0; i < 12; i++) {
+            System.out.printf("\n%-9s%2d:", "Posición", i);
+            for (int j = 0; j < 12; j++) {
+                System.out.printf("%4d", matriz[i][j]);
+            }
+        }
     }
 }
