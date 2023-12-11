@@ -75,21 +75,21 @@ public class Ejercicio8v4 {
     }
 
     public static void pintaTablero(int[] poss, String[] sup, String[] inf, String[][] tab) {
-        System.out.printf(" %s", "abcdefgh\n");
+        System.out.printf("\u001B[1;30m %s\u001B[0m\n", "abcdefgh"); // Colorear encabezado en gris
         int cont = 1;
         for (int j = 0; j < 8; j++) {
-            System.out.print(cont);
+            System.out.print("\u001B[1;30m" + cont + "\u001B[0m"); // Colorear números de fila en gris
             for (int i = 0; i < 8; i++) {
-                if (i == poss[1] & j == poss[0])
-                    System.out.print("&");
-                else if (Arrays.asList(sup).contains(tab[j][i]) | Arrays.asList(inf).contains(tab[j][i]))
-                    System.out.print("X");
+                if (i == poss[1] && j == poss[0])
+                    System.out.print("\u001B[1;34m&\u001B[0m"); // Colorear & en azul
+                else if (Arrays.asList(sup).contains(tab[j][i]) || Arrays.asList(inf).contains(tab[j][i]))
+                    System.out.print("\u001B[1;31mX\u001B[0m"); // Colorear X en rojo
                 else
                     System.out.print(" ");
             }
-            System.out.println(cont++);
+            System.out.println("\u001B[1;30m" + cont++ + "\u001B[0m");
         }
-        System.out.printf(" %s", "abcdefgh");
+        System.out.printf("\u001B[1;30m %s\u001B[0m", "abcdefgh");
     }
 
     public static int[] sacaPosiciones(String pos, String[][] tablero) {
