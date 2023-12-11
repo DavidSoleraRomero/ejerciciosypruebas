@@ -12,5 +12,12 @@ public class RotaHorizontal {
             System.out.println();
         }
 
+        System.out.println("\nArray vertical...");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.printf("%4d ", numeros[j][i]);
+            }
+            System.out.println();
+        }
     }
 }
