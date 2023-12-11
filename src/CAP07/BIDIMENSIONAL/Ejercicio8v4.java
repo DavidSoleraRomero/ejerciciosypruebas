@@ -1,5 +1,7 @@
 package CAP07.BIDIMENSIONAL;
 
+import java.util.Arrays;
+
 /* RECORDATORIO: En los BIDIMENSIONALES, la J equivale a la columna y la I equivale a la fila */
 public class Ejercicio8v4 {
     public static void main(String[] args) {
@@ -24,22 +26,30 @@ public class Ejercicio8v4 {
                 }
             }
         } while (!dentro);
-        pintaTablero(poss);
         String movimientos = "";
+        String[] superior = new String[14];
+        int contSup = 0;
+        String[] inferior = new String[14];
+        int contInf = 0;
         for (int i = 1; i <= 7; i++) {
             if (poss[0] + i < 8 & poss[1] + i < 8) {
                 movimientos = movimientos + tablero[poss[0] + i][poss[1] + i] + " ";
+                superior[contSup++] = tablero[poss[0] + i][poss[1] + i];
             }
             if (((poss[0] + i) < 8) & ((poss[1] - i) > -1)) {
                 movimientos = movimientos + tablero[poss[0] + i][poss[1] - i] + " ";
+                superior[contSup++] = tablero[poss[0] + i][poss[1] - i];
             }
             if (poss[0] - i > -1 & poss[1] + i < 8) {
                 movimientos = movimientos + tablero[poss[0] - i][poss[1] + i] + " ";
+                inferior[contInf++] = tablero[poss[0] - i][poss[1] + i];
             }
             if (poss[0] - i > -1 & poss[1] - i > -1) {
                 movimientos = movimientos + tablero[poss[0] - i][poss[1] - i] + " ";
+                inferior[contInf++] = tablero[poss[0] - i][poss[1] - i];
             }
         }
+        pintaTablero(poss, superior, inferior, tablero);
         System.out.printf("\nLos movimientos disponibles para esa posición son:\n%s", movimientos);
     }
 
@@ -64,7 +74,7 @@ public class Ejercicio8v4 {
         }
     }
 
-    public static void pintaTablero(int[] poss) {
+    public static void pintaTablero(int[] poss, String[] sup, String[] inf, String[][] tab) {
         System.out.printf(" %s", "abcdefgh\n");
         int cont = 1;
         for (int j = 0; j < 8; j++) {
@@ -72,11 +82,26 @@ public class Ejercicio8v4 {
             for (int i = 0; i < 8; i++) {
                 if (i == poss[1] & j == poss[0])
                     System.out.print("&");
+                else if (Arrays.asList(sup).contains(tab[j][i]) | Arrays.asList(inf).contains(tab[j][i]))
+                    System.out.print("X");
                 else
                     System.out.print(" ");
             }
             System.out.println(cont++);
         }
         System.out.printf(" %s", "abcdefgh");
+    }
+
+    public static int[] sacaPosiciones(String pos, String[][] tablero) {
+        int[] posiciones = new int[2];
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (tablero[i][j].equals(pos)) {
+                    posiciones[0] = i;
+                    posiciones[1] = j;
+                }
+            }
+        }
+        return posiciones;
     }
 }

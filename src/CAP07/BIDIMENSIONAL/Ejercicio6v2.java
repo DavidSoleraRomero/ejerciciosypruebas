@@ -30,7 +30,6 @@ public class Ejercicio6v2 {
                     } while (repite);
                 }
             }
-
             System.out.print("Mostrando el array...\n");
             for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < 10; j++) {

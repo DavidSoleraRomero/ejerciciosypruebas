@@ -12,7 +12,6 @@ public class Ejercicio6v3 {
             int max = Integer.MIN_VALUE;
             int[] mins = { Integer.MAX_VALUE, Integer.MAX_VALUE };
             int min = Integer.MAX_VALUE;
-            int cont = 0;
             for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < 10; j++) {
                     boolean repite = false;
@@ -27,7 +26,6 @@ public class Ejercicio6v3 {
                             }
                         }
                     } while (repite);
-                    cont++;
                     if (nums[i][j] < min) {
                         min = nums[i][j];
                         mins[0] = i;

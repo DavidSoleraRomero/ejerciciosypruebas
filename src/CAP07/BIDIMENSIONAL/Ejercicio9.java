@@ -7,7 +7,6 @@ cuadrada una posición en el sentido de las agujas del reloj. La matriz debe ten
 con los números convenientemente alineados. */
 public class Ejercicio9 {
     public static void main(String[] args) {
-
         int[][] matriz = new int[12][12];
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 12; j++) {

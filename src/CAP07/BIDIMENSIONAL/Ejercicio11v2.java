@@ -10,6 +10,9 @@ public class Ejercicio11v2 {
         int[][] nums = new int[10][10];
         int[] alter = new int[10];
         int cont2 = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int media = 0;
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 nums[i][j] = (int) (Math.random() * 101 + 200);
@@ -17,10 +20,16 @@ public class Ejercicio11v2 {
             }
             System.out.print("\n");
             alter[i] = nums[i][cont2++];
+            media = media + alter[i];
+            if (alter[i] < min)
+                min = alter[i];
+            if (alter[i] > max)
+                max = alter[i];
         }
         System.out.println("\nDiagonales: ");
         for (int i : alter) {
             System.out.printf("%3d ", i);
         }
+        System.out.printf("\nSu máximo es: %d\nSu mínimo es: %d\nSu media es: %.2f", max, min, (double) media / 9);
     }
 }
