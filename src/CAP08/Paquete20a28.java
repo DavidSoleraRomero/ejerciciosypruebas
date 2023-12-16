@@ -7,8 +7,18 @@ public class Paquete20a28 {
         System.out.printf("\nEl mínimo es %d\n", minimoArrayInt(miArray));
         System.out.printf("El máximo es %d\n", maximoArrayInt(miArray));
         System.out.printf("La media da %.2f\n", mediaArrayInt(miArray));
-        System.out.printf("%s",
+        System.out.printf("%s\n",
                 (estaEnArrayInt(10, miArray)) ? "El número está en el array" : "El número no está en el array");
+        System.out.printf("%s\n", "La posición del número está en la " + posicionEnArray(10, miArray));
+        System.out.printf("%s\n", "Array volteado");
+        miArray = volteaArrayInt(miArray);
+        muestraArray(miArray);
+        System.out.printf("%s\n", "Array rotado 2 posiciones derecha");
+        rotaArrayDerechaInt(2, miArray);
+        muestraArray(miArray);
+        System.out.printf("%s\n", "Array rotado 2 posiciones izquierda");
+        rotaArrayIzquierdaInt(2, miArray);
+        muestraArray(miArray);
     }
 
     public static int[] generaArrayInt(int tamano, int min, int max) {
@@ -52,6 +62,44 @@ public class Paquete20a28 {
                 dentro = true;
         }
         return dentro;
+    }
+
+    public static int posicionEnArray(int num, int[] array) {
+        int posicion = -1;
+        for (int i = 0; i < array.length & posicion == -1; i++) {
+            if (num == array[i])
+                posicion = i;
+        }
+        return posicion;
+    }
+
+    public static int[] volteaArrayInt(int[] array) {
+        int[] aux = new int[array.length];
+        int ultimo = array.length - 1;
+        for (int i = 0; i < array.length; i++) {
+            aux[i] = array[ultimo--];
+        }
+        return aux;
+    }
+
+    public static void rotaArrayDerechaInt(int num, int[] array) {
+        for (int i = 1; i <= num; i++) {
+            int ultimo = array[array.length - 1];
+            for (int j = array.length - 1; j > 0; j--) {
+                array[j] = array[j - 1];
+            }
+            array[0] = ultimo;
+        }
+    }
+
+    public static void rotaArrayIzquierdaInt(int num, int[] array) {
+        for (int i = 1; i <= num; i++) {
+            int primero = array[0];
+            for (int j = 0; j < array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+            array[array.length - 1] = primero;
+        }
     }
 
     public static void muestraArray(int array[]) {
