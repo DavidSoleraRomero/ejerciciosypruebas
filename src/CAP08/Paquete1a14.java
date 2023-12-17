@@ -44,6 +44,8 @@ public class Paquete1a14 {
     }
 
     public static boolean esPrimo(int num) {
+        if (num == 0)
+            return false;
         if (num == 1)
             return true;
         boolean primo = true;
