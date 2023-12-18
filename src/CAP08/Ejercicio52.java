@@ -10,6 +10,12 @@ DeArray(b) podría devolver el 52 o el 37. Utiliza la función en un programa de
 prueba. */
 public class Ejercicio52 {
     public static void main(String[] args) {
+        int[] a = { 52, 37 };
+        System.out.printf("Número aleatorio del array 'a' --> %d", aleatorioDeArray(a));
+    }
 
+    public static int aleatorioDeArray(int[] a) {
+        int aleatorio = (int) (Math.random() * a.length);
+        return a[aleatorio];
     }
 }
