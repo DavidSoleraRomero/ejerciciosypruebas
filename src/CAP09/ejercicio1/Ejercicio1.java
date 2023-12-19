@@ -1,4 +1,4 @@
-package CAP09;
+package CAP09.ejercicio1;
 
 /* Implementa la clase Caballo vista en un ejercicio anterior. Pruébala creando
 instancias y aplicándole algunos métodos. */

@@ -1,4 +1,4 @@
-package CAP09;
+package CAP09.ejercicio1;
 
 public class Caballo {
 
