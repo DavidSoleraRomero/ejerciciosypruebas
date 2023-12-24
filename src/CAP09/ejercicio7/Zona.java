@@ -1,6 +1,6 @@
 package CAP09.ejercicio7;
 
-public class Zona {
+public abstract class Zona {
     private int entradasPorVender;
 
     public Zona(int n) {
@@ -8,7 +8,7 @@ public class Zona {
     }
 
     public int getEntradasPorVender() {
-        return entradasPorVender;
+        return this.entradasPorVender;
     }
 
     /**
@@ -29,11 +29,5 @@ public class Zona {
             entradasPorVender -= n;
             System.out.println("Aquí tiene sus " + n + " entradas, gracias.");
         }
-    }
-
-    public static void menu() {
-        System.out.println("1. Mostrar número de entradas libres");
-        System.out.println("2. Vender entradas");
-        System.out.println("3. Salir");
     }
 }

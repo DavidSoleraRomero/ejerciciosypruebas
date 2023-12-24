@@ -8,6 +8,13 @@ venderlas.
 La clase Zona con sus atributos y métodos se muestra a continuación: */
 public class Ejercicio7 {
     public static void main(String[] args) {
-
+        ExpoCochesCampanillas expo1 = new ExpoCochesCampanillas();
+        int opcion = 0;
+        do {
+            expo1.menu();
+            System.out.print("Introduce una opción: ");
+            opcion = Integer.parseInt(System.console().readLine());
+            expo1.ejecutaOpcion(opcion);
+        } while (opcion != 7);
     }
 }
