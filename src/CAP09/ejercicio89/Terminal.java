@@ -1,4 +1,4 @@
-package CAP09.ejercicio8;
+package CAP09.ejercicio89;
 
 public class Terminal {
 

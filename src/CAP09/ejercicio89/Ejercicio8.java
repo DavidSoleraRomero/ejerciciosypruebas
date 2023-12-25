@@ -1,4 +1,4 @@
-package CAP09.ejercicio8;
+package CAP09.ejercicio89;
 
 /* Implementa la clase Terminal. Un terminal tiene asociado un número. Los
 terminales se pueden llamar unos a otros y el tiempo de conversación corre
