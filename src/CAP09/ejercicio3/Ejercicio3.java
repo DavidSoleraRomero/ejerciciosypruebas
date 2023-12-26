@@ -5,7 +5,7 @@ public class Ejercicio3 {
         Animal an1 = new Animal();
         Ave av1 = new Ave();
         Canario ca1 = new Canario();
-        Gato ga1 = new Gato();
+        Gato ga1 = new Gato("Romano", "Naranja", 2);
         Lagarto la1 = new Lagarto();
         Mamifero ma1 = new Mamifero();
         Perro pe1 = new Perro();

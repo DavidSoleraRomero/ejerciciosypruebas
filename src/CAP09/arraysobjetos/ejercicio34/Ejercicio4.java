@@ -1,4 +1,4 @@
-package CAP09.arraysobjetos.ejercicio4;
+package CAP09.arraysobjetos.ejercicio34;
 
 /* Modifica el programa “Colección de discos” como se indica a continuación:
 a) Mejora la opción “Nuevo disco” de tal forma que cuando se llenen todas las
@@ -10,10 +10,8 @@ c) Modifica el programa de tal forma que el código del disco sea único, es dec
 que no se pueda repetir.
 d) Crea un submenú dentro dentro de “Listado” de tal forma que exista un
 listado completo, un listado por autor (todos los discos que ha publicado un
-
 determinado autor), un listado por género (todos los discos de un género de-
 terminado) y un listado de discos cuya duración esté en un rango determinado
-
 por el usuario. */
 public class Ejercicio4 {
     public static void main(String[] args) {
