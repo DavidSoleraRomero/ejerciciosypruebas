@@ -2,7 +2,7 @@ package CAP09.arraysobjetos.ejercicio34;
 
 public class Disco {
     private String codigo = "LIBRE";
-    private String autor;
+    private String autor = "null";
     private String titulo;
     private String genero;
     private int duracion; // duración total en minutos
