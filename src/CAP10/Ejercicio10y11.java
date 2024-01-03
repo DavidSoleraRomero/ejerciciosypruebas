@@ -2,7 +2,6 @@ package CAP10;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 
 /* Crea un mini-diccionario español-inglés que contenga, al menos, 20 palabras
 (con su correspondiente traducción). Utiliza un objeto de la clase HashMap para
