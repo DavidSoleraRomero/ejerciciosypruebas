@@ -25,8 +25,8 @@ public class Ejercicio10y11 {
         miniDiccionario.put("ventilador", "fan");
         miniDiccionario.put("botella", "bottle");
         miniDiccionario.put("palo", "stick");
-        miniDiccionario.put("tetas", "boobs");
-        miniDiccionario.put("culo", "ass");
+        miniDiccionario.put("cuerpo", "body");
+        miniDiccionario.put("cena", "dinner");
         miniDiccionario.put("altavoces", "speakers");
         miniDiccionario.put("caja", "box");
         miniDiccionario.put("mando", "controller");
