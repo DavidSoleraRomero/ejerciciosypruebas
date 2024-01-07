@@ -1,0 +1,6 @@
+Linea del segundo fichero número 1
+Linea del segundo fichero número 2
+Linea del segundo fichero número 3
+Linea del segundo fichero número 4
+Linea del segundo fichero número 5
+Linea del segundo fichero número 6
