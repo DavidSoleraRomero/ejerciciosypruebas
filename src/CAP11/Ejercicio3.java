@@ -20,8 +20,12 @@ pueden tener tamaños diferentes. */
 public class Ejercicio3 {
     public static void main(String[] args) {
         try {
-            BufferedWriter bw1 = new BufferedWriter(new FileWriter("./src/CAP11/archivo1.txt"));
-            BufferedWriter bw2 = new BufferedWriter(new FileWriter("./src/CAP11/archivo2.txt"));
+            String ruta = "./src/CAP11/";
+            if (args.length != 2) {
+                opciones();
+            }
+            BufferedWriter bw1 = new BufferedWriter(new FileWriter(ruta + args[0]));
+            BufferedWriter bw2 = new BufferedWriter(new FileWriter(ruta + args[1]));
             int aleatorio1 = (int) (Math.random() * 11 + 5);
             int aleatorio2 = (int) (Math.random() * 11 + 5);
             for (int i = 1; i <= aleatorio1; i++) {
@@ -32,8 +36,8 @@ public class Ejercicio3 {
                 bw2.write("Linea del segundo fichero número " + i + "\n");
             }
             bw2.close();
-            BufferedReader br1 = new BufferedReader(new FileReader("./src/CAP11/archivo1.txt"));
-            BufferedReader br2 = new BufferedReader(new FileReader("./src/CAP11/archivo2.txt"));
+            BufferedReader br1 = new BufferedReader(new FileReader(ruta + args[0]));
+            BufferedReader br2 = new BufferedReader(new FileReader(ruta + args[1]));
             BufferedWriter bw3 = new BufferedWriter(new FileWriter("./src/CAP11/mezcla.txt"));
             String linea1 = "";
             String linea2 = "";
@@ -51,5 +55,11 @@ public class Ejercicio3 {
         } catch (IOException e) {
             System.out.println("Error en la escritura/lectura del fichero");
         }
+    }
+
+    public static void opciones() {
+        System.out.println("Introduzca 2 ficheros para generar lineas aleatorias en ellos");
+        System.out.println("Hazlo con este formato: java Ejercicio3 archivo1.txt archivo2.txt");
+        System.exit(-1);
     }
 }

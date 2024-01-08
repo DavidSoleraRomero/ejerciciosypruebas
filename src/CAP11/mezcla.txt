@@ -10,8 +10,11 @@ Linea del primer fichero número 5
 Linea del segundo fichero número 5
 Linea del primer fichero número 6
 Linea del segundo fichero número 6
-Linea del primer fichero número 7
-Linea del primer fichero número 8
-Linea del primer fichero número 9
-Linea del primer fichero número 10
-Linea del primer fichero número 11
+Linea del segundo fichero número 7
+Linea del segundo fichero número 8
+Linea del segundo fichero número 9
+Linea del segundo fichero número 10
+Linea del segundo fichero número 11
+Linea del segundo fichero número 12
+Linea del segundo fichero número 13
+Linea del segundo fichero número 14
