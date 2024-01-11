@@ -1,6 +1,6 @@
 package CAP09.ejercicio3;
 
-public class Canario extends Animal {
+public class Canario extends Ave {
 
     public void pioPio() {
         System.out.println("Pio pio pio");

@@ -9,11 +9,11 @@ resultado debería ser 1h 6m 0s. Realiza un programa de prueba para comprobar
 que la clase funciona bien. */
 public class Ejercicio6 {
     public static void main(String[] args) {
-        Tiempo t1 = new Tiempo(10, 35, 5);
-        Tiempo t2 = new Tiempo(10, 25, 1);
-        Tiempo.suma(t1, t2);
+        Tiempov2 t1 = new Tiempov2(12, 35, 5);
+        Tiempov2 t2 = new Tiempov2(10, 20, 1);
+        Tiempov2.suma(t1, t2);
         System.out.println();
-        Tiempo.resta(t1, t2);
+        Tiempov2.resta(t1, t2);
         System.out.println();
         System.out.print(t1 + " | " + t2);
     }

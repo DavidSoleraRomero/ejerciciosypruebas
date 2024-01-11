@@ -7,6 +7,10 @@ public class Caballo {
     private String raza;
     private String comidaFavorita;
 
+    public Caballo() throws Exception {
+        throw new Exception("Utilice el constructor de la clase");
+    }
+
     public Caballo(String color, String raza, String comidaFavorita) {
         this.color = color;
         this.raza = raza;
@@ -15,6 +19,22 @@ public class Caballo {
 
     public void correr() {
         System.out.println("El caballo comienza a correr");
+    }
+
+    public void parar() {
+        System.out.println("El caballo ha dejado de correr");
+    }
+
+    public void defecar() {
+        System.out.println("El caballo ha hecho popó");
+    }
+
+    public void revolcarse() {
+        System.out.println("El caballo se ha revolcado por el suelo");
+    }
+
+    public void miccionar() {
+        System.out.println("El caballo ha miccionado");
     }
 
     public void comer() {

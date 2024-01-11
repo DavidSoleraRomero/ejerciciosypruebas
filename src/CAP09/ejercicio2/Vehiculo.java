@@ -1,6 +1,6 @@
 package CAP09.ejercicio2;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 
     private static int vehiculosCreados;
     private static int kilometrosTotales;
