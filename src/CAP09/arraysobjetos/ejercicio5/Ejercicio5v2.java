@@ -18,8 +18,11 @@ public class Ejercicio5v2 {
 
     public static void ejecutaOpcion(int i, Articulo[] a) {
         System.out.println();
+        int indiceAntual = devuelveIndiceActual(a);
         switch (i) {
             case 1:
+                if (indiceAntual == 0)
+                    System.out.println("No hay elementos en el almacén.");
                 for (int j = 0; j < a.length; j++) {
                     if (a[j] != null)
                         System.out.println(a[j]);
@@ -27,42 +30,98 @@ public class Ejercicio5v2 {
                         break;
                 }
                 break;
-            case 2:
-
+            case 2: {
+                System.out.print("Introduce descripción del artículo: ");
+                String desc = System.console().readLine();
+                System.out.print("Introduce precio compra del artículo: ");
+                int precioC = Integer.parseInt(System.console().readLine());
+                System.out.print("Introduce precio venta del artículo: ");
+                int precioV = Integer.parseInt(System.console().readLine());
+                int stock;
+                do {
+                    System.out.print("Introduce stock del artículo: ");
+                    stock = Integer.parseInt(System.console().readLine());
+                } while (stock <= 0);
+                int indice = devuelveIndiceActual(a);
+                a[indice] = new Articulo(desc, precioC, precioV, stock);
+            }
                 break;
             case 3: {
-                int posicion;
-                do {
-                    System.out.print("Introduce el código del artículo: ");
-                    int codigo = Integer.parseInt(System.console().readLine());
-                    posicion = devuelvePosicionEnArray(a, codigo);
-                } while (posicion == -1);
-                for (int j = posicion; j < a.length - 1; i++) {
-                    a[j] = a[j + 1];
-                }
+                if (indiceAntual != 0) {
+                    int posicion;
+                    do {
+                        System.out.print("Introduce el código del artículo: ");
+                        int codigo = Integer.parseInt(System.console().readLine());
+                        posicion = devuelvePosicionEnArray(a, codigo);
+                    } while (posicion == -1);
+                    for (int j = posicion; j < a.length - 1; j++) {
+                        a[j] = a[j + 1];
+                    }
+                } else
+                    System.out.println("No hay articulos, no puedes dar de baja");
             }
                 break;
-            case 4:
-
+            case 4: {
+                if (indiceAntual != 0) {
+                    int posicion;
+                    do {
+                        System.out.print("Introduce el código del artículo: ");
+                        int codigo = Integer.parseInt(System.console().readLine());
+                        posicion = devuelvePosicionEnArray(a, codigo);
+                    } while (posicion == -1);
+                    int indice = posicion;
+                    System.out.print("Introduce nueva descripción del artículo: ");
+                    String desc = System.console().readLine();
+                    System.out.print("Introduce nuevo precio compra del artículo: ");
+                    int precioC = Integer.parseInt(System.console().readLine());
+                    System.out.print("Introduce nuevo precio venta del artículo: ");
+                    int precioV = Integer.parseInt(System.console().readLine());
+                    int stock;
+                    do {
+                        System.out.print("Introduce stock del artículo: ");
+                        stock = Integer.parseInt(System.console().readLine());
+                    } while (stock <= 0);
+                    a[indice] = new Articulo(desc, precioC, precioV, stock);
+                } else
+                    System.out.println("No hay articulos, no puedes modificar");
+            }
                 break;
             case 5: {
-                int cantidad;
-                do {
-                    System.out.print("Introduce la cantidad de mercancía que va a llegar: ");
-                    cantidad = Integer.parseInt(System.console().readLine());
-                } while (cantidad <= 0);
-                int posicion;
-                do {
-                    System.out.print("Introduce el código del artículo: ");
-                    int codigo = Integer.parseInt(System.console().readLine());
-                    posicion = devuelvePosicionEnArray(a, codigo);
-                } while (posicion == -1);
-                a[posicion].setStock(cantidad);
+                if (indiceAntual != 0) {
+                    int cantidad;
+                    do {
+                        System.out.print("Introduce la cantidad de mercancía que va a llegar: ");
+                        cantidad = Integer.parseInt(System.console().readLine());
+                    } while (cantidad <= 0);
+                    int posicion;
+                    do {
+                        System.out.print("Introduce el código del artículo: ");
+                        int codigo = Integer.parseInt(System.console().readLine());
+                        posicion = devuelvePosicionEnArray(a, codigo);
+                    } while (posicion == -1);
+                    a[posicion].setStock(a[posicion].getStock() + cantidad);
+                } else
+                    System.out.println("No hay articulos, no puedes introducir mercancía");
                 break;
             }
-            case 6:
-
-                break;
+            case 6: {
+                if (indiceAntual != 0) {
+                    int cantidad;
+                    do {
+                        System.out.print("Introduce la cantidad de mercancía que va a salir: ");
+                        cantidad = Integer.parseInt(System.console().readLine());
+                    } while (cantidad <= 0);
+                    int posicion;
+                    do {
+                        System.out.print("Introduce el código del artículo: ");
+                        int codigo = Integer.parseInt(System.console().readLine());
+                        posicion = devuelvePosicionEnArray(a, codigo);
+                    } while (posicion == -1);
+                    a[posicion].setStock(a[posicion].getStock() - cantidad);
+                    break;
+                } else
+                    System.out.println("No hay articulos, no puedes sacar mercancia");
+            }
             case 7:
                 System.out.println("Gracias por utilizar GESTISIMAL...\nSaliendo...");
                 break;
@@ -72,7 +131,8 @@ public class Ejercicio5v2 {
     }
 
     private static int devuelvePosicionEnArray(Articulo[] a, int codigo) {
-        for (int i = 0; i < a.length; i++) {
+        int limite = devuelveIndiceActual(a);
+        for (int i = 0; i < limite; i++) {
             if (a[i].getCodigo() == codigo)
                 return i;
         }

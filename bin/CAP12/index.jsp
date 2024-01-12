@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>¡Hola Mundo!</h1>
-    <% out.println("<h1>¡Hola Mundo!</h1>"); %>
-    <!-- En esta página solo se usa HTML -->
+    <!-- Así se escribe Java en HTML <% out.println("<h1>¡Hola Mundo!</h1>"); %>
+    En esta página solo se usa HTML -->
 </body>
 </html>
