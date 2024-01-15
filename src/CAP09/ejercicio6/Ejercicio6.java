@@ -9,8 +9,8 @@ resultado debería ser 1h 6m 0s. Realiza un programa de prueba para comprobar
 que la clase funciona bien. */
 public class Ejercicio6 {
     public static void main(String[] args) {
-        Tiempov2 t1 = new Tiempov2(12, 35, 5);
-        Tiempov2 t2 = new Tiempov2(10, 20, 1);
+        Tiempov2 t1 = new Tiempov2(0, 35, 20);
+        Tiempov2 t2 = new Tiempov2(25, 30, 40);
         Tiempov2.suma(t1, t2);
         System.out.println();
         Tiempov2.resta(t1, t2);
