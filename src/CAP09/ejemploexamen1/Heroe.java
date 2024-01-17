@@ -48,10 +48,11 @@ public class Heroe implements Movimientos {
     @Override
     public void golpeBajo(Heroe h) {
         if (h.getSalud() > 0) {
-            int danio = (int) (Math.random() * poderAtaque + 1);
-            System.out.print(this.getNombre() + " va a dar un golpe bajo, quitando " + danio + " de vida");
-            System.out.println("\n");
+            int danio = (int) (Math.random() * (poderAtaque * 2) + 1);
+            System.out.println();
+            System.out.print(this.getNombre() + " va a dar un golpe bajo, quitando " + danio + " de vida\n");
             h.setSalud(h.getSalud() - danio);
+            vidaRestante(h);
         } else {
             System.out.println("Ese héroe ya ha caído");
         }
@@ -60,9 +61,11 @@ public class Heroe implements Movimientos {
     @Override
     public void espadazo(Heroe h) {
         if (h.getSalud() > 0) {
-            int danio = (int) (Math.random() * poderAtaque + 5);
-            System.out.println(this.getNombre() + " va a dar un espadazo, quitando " + danio + " de vida");
+            int danio = (int) (Math.random() * (poderAtaque * 2 + 1) + 5);
+            System.out.println();
+            System.out.print(this.getNombre() + " va a dar un espadazo, quitando " + danio + " de vida\n");
             h.setSalud(h.getSalud() - danio);
+            vidaRestante(h);
         } else {
             System.out.println("Ese héroe ya ha caído");
         }
@@ -73,15 +76,21 @@ public class Heroe implements Movimientos {
         if (this.salud < 100 & this.salud > 0) {
             int curacion;
             do {
-                curacion = (int) (Math.random() * 5 + 1);
-            } while (this.salud + curacion <= 100);
-            System.out.println(getNombre() + " se cubre rápidamente para curarse " + curacion + " puntos de vida");
+                curacion = (int) (Math.random() * 3 + 1);
+            } while (this.salud + curacion >= 100);
+            System.out.println();
+            System.out.print(getNombre() + " se cubre rápidamente para curarse " + curacion + " puntos de vida\n");
             this.setSalud(this.getSalud() + curacion);
+            System.out.print("Vida actual de " + this.getNombre() + " = " + this.getSalud() + "\n");
         } else if (salud <= 0) {
             System.out.println("Ese héroe ya ha caído");
         } else {
             this.espadazo(h);
         }
+    }
+
+    private static void vidaRestante(Heroe h) {
+        System.out.println("Vida restante de " + h.getNombre() + " = " + h.getSalud());
     }
 
 }

@@ -7,6 +7,7 @@ public class Juego {
         Heroe h2 = new Heroe(devuelveNombre(), (int) (Math.random() * 10 + 1));
         boolean salir = false;
         do {
+            h2.setSalud(100);
             System.out.print("Introduce el nombre de tu personaje: ");
             String nombre = System.console().readLine();
             int fuerza;
@@ -16,19 +17,27 @@ public class Juego {
             } while (fuerza <= 0 | fuerza > 10);
             h1 = new Heroe(nombre, fuerza);
             miBatalla = new Batalla(h1, h2);
+            System.out.println("\n" + h1);
+            System.out.println(h2);
+            System.out.println("Presiona ENTER para comenzar la batalla...");
+            System.console().readLine();
             while (miBatalla.ambosVivos(h1, h2)) {
                 miBatalla.pelea(h1, h2);
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(0);
                 } catch (Exception e) {
                     System.out.println("Se ha producido un error inesperado");
                 }
             }
             int opcion;
+            System.out.printf("\nEL GANADOR ES %s\n",
+                    (h1.getSalud() > 0) ? h1.getNombre().toUpperCase() : h2.getNombre().toUpperCase());
             do {
-                System.out.print("¿Quieres continuar jugando?\n1. Sí\n2. No\nOpción: ");
+                System.out.print("\n¿Quieres continuar jugando?\n1. Sí\n2. No\nOpción: ");
                 opcion = Integer.parseInt(System.console().readLine());
             } while (opcion != 1 & opcion != 2);
+            if (opcion == 2)
+                salir = true;
         } while (!salir);
     }
 
