@@ -24,6 +24,10 @@ public class FichaDomino {
         return this.toString();
     }
 
+    public static boolean encajaDerecha(FichaDomino f1, FichaDomino f2) {
+        return (f1.getLado1() == f2.getLado0()) ? true : false;
+    }
+
     public boolean encaja(FichaDomino f) {
         if ((this.lados[0] == f.lados[0] | this.lados[0] == f.lados[1]) |
                 (this.lados[1] == f.lados[0] | this.lados[1] == f.lados[1]))
