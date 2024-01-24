@@ -1,23 +1,41 @@
-import java.util.Scanner;
 /* Programa probando múltiples cosas */
+
+import generics.MyArrayList;
+import generics.Perro;
 
 public class App {
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce el primer número a sumar:");
-        int i = sc.nextInt();
-        System.out.println("Introduce el segundo número a sumar:");
-        int a = sc.nextInt();
-        sc.nextLine();
-        System.out.println("Introduzca un texto cualquiera:");
-        String texto = sc.nextLine();
-        System.out.println();
-        System.out.println((i + a) + " <- La suma de " + i + " + " + a + " da ese resultado.");
-        System.out.println(texto);
-        System.out.print("Hola \n");
-        System.out.println("Me llamo\t-> \t  David");
-
-        sc.close();
+        /*
+         * MyArrayList<Integer> array = new MyArrayList<>(10);
+         * for (int i = 0; i < 1000; i++) {
+         * array.add(i);
+         * }
+         * System.out.println(array);
+         * for (int i = 0; i < 1000; i++) {
+         * array.remove(0);
+         * }
+         * System.out.println(array);
+         * for (int i = 0; i < 1000; i++) {
+         * array.add(i);
+         * }
+         * System.out.println(array);
+         * array.clear();
+         * System.out.println(array);
+         * array.add(100);
+         * array.add(120);
+         * array.add(140);
+         * System.out.println(array);
+         * array.set(1, 130);
+         * System.out.println(array);
+         */
+        MyArrayList<Perro> arrayPerros = new MyArrayList<>(100);
+        for (int i = 0; i < 1000; i++) {
+            String nombre = "";
+            for (int j = 0; j < 10; j++) {
+                nombre += "" + (char) (65 + (int) (Math.random() * 20));
+            }
+            arrayPerros.add(new Perro(nombre));
+        }
+        System.out.println(arrayPerros);
     }
 }
