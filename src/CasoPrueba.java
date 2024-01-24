@@ -2,7 +2,7 @@
 public class CasoPrueba {
     public static void main(String[] args) {
         try {
-            System.out.println(areEquals("   ", null));
+            System.out.println(areEquals("   ", "   "));
             System.out.println(areEquals("Ho La", "hola"));
             System.out.println(areEquals("$%$%", "$%$%"));
             System.out.println(areEquals("@", "@"));
