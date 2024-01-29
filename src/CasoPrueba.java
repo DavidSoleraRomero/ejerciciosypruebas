@@ -2,6 +2,9 @@
 public class CasoPrueba {
     public static void main(String[] args) {
         try {
+            String cadena1 = null;
+            String cadena2 = null;
+            System.out.println(areEquals(cadena1, cadena2));
             System.out.println(areEquals("   ", "   "));
             System.out.println(areEquals("Ho La", "hola"));
             System.out.println(areEquals("$%$%", "$%$%"));
