@@ -1,10 +1,10 @@
 package CAP10;
 
 import java.util.ArrayList;
+import java.util.Collections;
 /* Realiza un programa que escoja al azar 10 cartas de la baraja española
 (10 objetos de la clase Carta). Emplea un objeto de la clase ArrayList para
 almacenarlas y asegúrate de que no se repite ninguna. */
-import java.util.Collections;
 
 /* Modifica el programa anterior de tal forma que las cartas se muestren orde-
 nadas. Primero se ordenarán por palo: bastos, copas, espadas, oros. Cuando
@@ -30,10 +30,9 @@ public class Ejercicio8y9v2 {
     }
 
     public static boolean contieneCarta(ArrayList<Cartav2> a, Cartav2 carta) {
-        for (int i = 0; i < a.size(); i++) {
+        for (int i = 0; i < a.size(); i++)
             if (a.get(i).equals(carta))
                 return true;
-        }
         return false;
     }
 }
