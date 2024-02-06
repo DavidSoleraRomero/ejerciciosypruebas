@@ -8,8 +8,9 @@ public class Disco {
     private int duracion;
     private String genero;
 
-    public Disco(String codigo, String autor, int duracion, String genero) {
+    public Disco(String codigo, String titulo, String autor, int duracion, String genero) {
         this.codigo = codigo;
+        this.titulo = titulo;
         this.autor = autor;
         this.duracion = duracion;
         this.genero = genero;
@@ -54,7 +55,8 @@ public class Disco {
         ret += "Título: " + this.titulo + "\n";
         ret += "Autor: " + this.autor + "\n";
         ret += "Duración: " + this.duracion + "\n";
-        ret += "Género: " + this.genero;
+        ret += "Género: " + this.genero + "\n";
+        ret += "====================\n";
         return ret;
     }
 
