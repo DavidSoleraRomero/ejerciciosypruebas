@@ -13,6 +13,10 @@ public interface ColeccionDeDiscosInterface {
 
     public void modificaAutor(String id);
 
+    public void modificaDisco(String id);
+
+    public void modificaDisco(Disco d);
+
     public void eliminaAutor(Autor a);
 
     public void eliminaAutor(String id);
@@ -20,6 +24,8 @@ public interface ColeccionDeDiscosInterface {
     public boolean autorExiste(Autor a);
 
     public boolean autorExiste(String id);
+
+    public boolean autorExisteAlguno();
 
     public boolean discoExiste(String autorId, Disco d);
 

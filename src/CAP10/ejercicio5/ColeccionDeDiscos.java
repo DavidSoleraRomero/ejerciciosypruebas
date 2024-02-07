@@ -1,6 +1,5 @@
 package CAP10.ejercicio5;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +8,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
     private static int cont;
 
     private HashMap<String, HashMap<String, Disco>> discos = new HashMap<>();
-    private ArrayList<Autor> autores = new ArrayList<>();
+    private HashMap<String, Autor> autores = new HashMap<>();
 
     public static int getCont() {
         return cont++;
@@ -17,7 +16,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
 
     @Override
     public void aniadeDiscoAlAutor(String autorId, Disco d) {
-        if (!discoExiste(autorId, d) & autorExiste(autorId))
+        if ((!discoExiste(autorId, d)) & autorExiste(autorId))
             discos.get(autorId).put(d.getCodigo(), d);
     }
 
@@ -31,26 +30,28 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
     public void aniadeAutor(Autor a) {
         if (!discos.containsKey(a.getId())) {
             discos.put(a.getId(), new HashMap<>());
-            autores.add(a);
+            autores.put(a.getId(), a);
         } else {
-            System.out.println("Ese autor ya existe");
+            System.out.println("\nEse autor ya existe");
         }
     }
 
     @Override
     public void eliminaAutor(Autor a) {
-        if (discos.containsKey(a.getId()))
+        if (discos.containsKey(a.getId())) {
             discos.remove(a.getId());
-        else
-            System.out.println("Ese autor no está en la lista");
+            autores.remove(a.getId());
+        } else
+            System.out.println("\nEse autor no está en la lista");
     }
 
     @Override
     public void eliminaAutor(String id) {
-        if (discos.containsKey(id))
+        if (discos.containsKey(id)) {
             discos.remove(id);
-        else
-            System.out.println("Ese autor no está en la lista");
+            autores.remove(id);
+        } else
+            System.out.println("\nEse autor no está en la lista");
     }
 
     @Override
@@ -65,6 +66,11 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         if (discos.containsKey(id))
             return true;
         return false;
+    }
+
+    @Override
+    public boolean autorExisteAlguno() {
+        return (discos.size() > 0) ? true : false;
     }
 
     @Override
@@ -88,23 +94,143 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
     }
 
     public String listaAutoresYDiscos() {
-        String ret = "";
+        String ret = "| ARTISTAS |\n\n";
+        for (Map.Entry<String, Autor> entrys : autores.entrySet()) {
+            ret += entrys.getValue().toString();
+        }
         for (Map.Entry<String, HashMap<String, Disco>> autoresDiscos : discos.entrySet()) {
             HashMap<String, Disco> disco = autoresDiscos.getValue();
             for (Map.Entry<String, Disco> discos : disco.entrySet())
                 ret += discos.getValue().toString();
         }
-        return ret;
+        return (ret.equals("| ARTISTAS |\n\n") ? "\nAún no hay artistas" : ret);
     }
 
     @Override
     public void modificaAutor(Autor a) {
-        // PENDIENTE
+        if (autorExiste(a)) {
+            Autor autor = autores.get(a.getId());
+            System.out.printf("ID Actual: %s\n", autor.getId());
+            System.out.print("Nuevo ID: ");
+            String nuevoId = System.console().readLine();
+            System.out.printf("Nombre artístico actual: %s\n", autor.getNombreArtistico());
+            System.out.print("Nombre artístico nuevo: ");
+            String nuevoNArtistico = System.console().readLine();
+            System.out.printf("Nombre real actual: %s\n", autor.getNombreReal());
+            System.out.print("Nombre real nuevo: ");
+            String nuevoNReal = System.console().readLine();
+            System.out.printf("Edad actual: %s\n", autor.getEdad());
+            System.out.print("Edad nueva: ");
+            int nuevaEdad = Integer.parseInt(System.console().readLine());
+            Autor aux = new Autor(nuevoId, nuevoNReal, nuevoNArtistico, nuevaEdad);
+            autores.remove(a.getId());
+            autores.put(aux.getId(), aux);
+            if (!a.getId().equals(aux.getId())) {
+                HashMap<String, Disco> discosAutorAux = discos.get(a.getId());
+                discos.remove(a.getId());
+                discos.put(aux.getId(), discosAutorAux);
+            }
+        } else {
+            System.out.println("\nEse autor no existe aún");
+        }
     }
 
     @Override
     public void modificaAutor(String id) {
-        // PENDIENTE
+        if (autorExiste(id)) {
+            Autor autor = autores.get(id);
+            System.out.printf("ID Actual: %s\n", autor.getId());
+            System.out.print("Nuevo ID: ");
+            String nuevoId = System.console().readLine();
+            System.out.printf("Nombre artístico actual: %s\n", autor.getNombreArtistico());
+            System.out.print("Nombre artístico nuevo: ");
+            String nuevoNArtistico = System.console().readLine();
+            System.out.printf("Nombre real actual: %s\n", autor.getNombreReal());
+            System.out.print("Nombre real nuevo: ");
+            String nuevoNReal = System.console().readLine();
+            System.out.printf("Edad actual: %s\n", autor.getEdad());
+            System.out.print("Edad nueva: ");
+            int nuevaEdad = Integer.parseInt(System.console().readLine());
+            Autor aux = new Autor(nuevoId, nuevoNReal, nuevoNArtistico, nuevaEdad);
+            autores.remove(id);
+            autores.put(aux.getId(), aux);
+            if (!id.equals(aux.getId())) {
+                HashMap<String, Disco> discosAutorAux = discos.get(id);
+                discos.remove(id);
+                discos.put(aux.getId(), discosAutorAux);
+            }
+        } else {
+            System.out.println("\nEse autor no existe aún");
+        }
+    }
+
+    @Override
+    public void modificaDisco(String id) {
+        boolean existe = false;
+        Autor aux = new Autor(null, null, null, cont);
+        for (Map.Entry<String, HashMap<String, Disco>> autoresDiscos : discos.entrySet()) {
+            HashMap<String, Disco> disco = autoresDiscos.getValue();
+            for (Map.Entry<String, Disco> discos : disco.entrySet())
+                if (discos.getKey().equals(id)) {
+                    existe = true;
+                    aux = autores.get(autoresDiscos.getKey());
+                    System.out.print(discos.getValue().toString());
+                }
+        }
+        if (existe) {
+            System.out.printf("Disco de: %s\n", aux.getNombreArtistico());
+            System.out.print("Nuevo código: ");
+            String nuevoCod = System.console().readLine();
+            System.out.print("Nuevo título: ");
+            String nuevoTit = System.console().readLine();
+            String nuevoAut;
+            do {
+                System.out.print("Nuevo autor: ");
+                nuevoAut = System.console().readLine();
+            } while (!autorExiste(nuevoAut));
+            System.out.print("Nueva duración: ");
+            int nuevaDur = Integer.parseInt(System.console().readLine());
+            System.out.print("Nuevo género: ");
+            String nuevoGen = System.console().readLine();
+            discos.get(aux.getId()).remove(id);
+            discos.get(aux.getId()).put(nuevoCod, new Disco(nuevoCod, nuevoTit, nuevoAut, nuevaDur, nuevoGen));
+        } else {
+            System.out.println("\nEse disco no existe");
+        }
+    }
+
+    @Override
+    public void modificaDisco(Disco d) {
+        boolean existe = false;
+        Autor aux = new Autor(null, null, null, cont);
+        for (Map.Entry<String, HashMap<String, Disco>> autoresDiscos : discos.entrySet()) {
+            HashMap<String, Disco> disco = autoresDiscos.getValue();
+            for (Map.Entry<String, Disco> discos : disco.entrySet())
+                if (discos.getKey().equals(d.getCodigo())) {
+                    existe = true;
+                    aux = autores.get(autoresDiscos.getKey());
+                }
+        }
+        if (existe) {
+            System.out.printf("Disco de: %s\n", aux.getNombreArtistico());
+            System.out.print("Nuevo código: ");
+            String nuevoCod = System.console().readLine();
+            System.out.print("Nuevo título: ");
+            String nuevoTit = System.console().readLine();
+            String nuevoAut;
+            do {
+                System.out.print("Nuevo autor: ");
+                nuevoAut = System.console().readLine();
+            } while (!autorExiste(nuevoAut));
+            System.out.print("Nueva duración: ");
+            int nuevaDur = Integer.parseInt(System.console().readLine());
+            System.out.print("Nuevo género: ");
+            String nuevoGen = System.console().readLine();
+            discos.get(aux.getId()).remove(d.getCodigo());
+            discos.get(aux.getId()).put(nuevoCod, new Disco(nuevoCod, nuevoTit, nuevoAut, nuevaDur, nuevoGen));
+        } else {
+            System.out.println("\nEse disco no existe");
+        }
     }
 
     public static int menu() {
@@ -114,7 +240,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         System.out.println("=====================");
         System.out.println("1. Listado de todos los discos");
         System.out.println("2. Nuevo disco de un autor");
-        System.out.println("3. Modificar discos de un autor");
+        System.out.println("3. Modifica disco de un autor");
         System.out.println("4. Borrar disco");
         System.out.println("5. Añadir autor");
         System.out.println("6. Borrar autor");

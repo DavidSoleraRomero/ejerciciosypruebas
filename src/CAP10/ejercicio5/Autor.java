@@ -1,17 +1,14 @@
 package CAP10.ejercicio5;
 
-public class Autor {
+public class Autor extends Persona {
 
     private String id;
-    private String nombreReal;
     private String nombreArtistico;
-    private int edad;
 
     public Autor(String id, String nombreReal, String nombreArtistico, int edad) {
+        super(nombreReal, edad);
         this.id = id;
-        this.nombreReal = nombreReal;
         this.nombreArtistico = nombreArtistico;
-        this.edad = edad;
     }
 
     public String getId() {
@@ -22,14 +19,6 @@ public class Autor {
         this.id = id;
     }
 
-    public String getNombreReal() {
-        return nombreReal;
-    }
-
-    public void setNombreReal(String nombreReal) {
-        this.nombreReal = nombreReal;
-    }
-
     public String getNombreArtistico() {
         return nombreArtistico;
     }
@@ -38,18 +27,10 @@ public class Autor {
         this.nombreArtistico = nombreArtistico;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
     @Override
     public String toString() {
-        return String.format("ID: %s\nNombre real: %s\nNombre artístico: %s\nEdad: %d",
-                this.id, this.nombreReal, this.nombreArtistico, this.edad);
+        return String.format("ID: %s\nNombre real: %s\nNombre artístico: %s\nEdad: %d\n\n",
+                this.id, this.getNombreReal(), this.nombreArtistico, this.getEdad());
     }
 
 }
