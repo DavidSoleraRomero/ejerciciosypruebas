@@ -113,6 +113,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         for (Map.Entry<String, Autor> entrys : autores.entrySet()) {
             ret += entrys.getValue().toString();
         }
+        ret += "| DISCOS |\n";
         for (Map.Entry<String, HashMap<String, Disco>> autoresDiscos : discos.entrySet()) {
             HashMap<String, Disco> disco = autoresDiscos.getValue();
             for (Map.Entry<String, Disco> discos : disco.entrySet())
@@ -126,11 +127,6 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         if (autorExiste(a)) {
             Autor autor = autores.get(a.getId());
             System.out.printf("ID Actual: %s\n", autor.getId());
-            String nuevoId;
-            do {
-                System.out.print("Nuevo ID: ");
-                nuevoId = System.console().readLine();
-            } while (discos.containsKey(nuevoId) & !a.getId().equals(nuevoId));
             System.out.printf("Nombre artístico actual: %s\n", autor.getNombreArtistico());
             System.out.print("Nombre artístico nuevo: ");
             String nuevoNArtistico = System.console().readLine();
@@ -140,7 +136,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
             System.out.printf("Edad actual: %s\n", autor.getEdad());
             System.out.print("Edad nueva: ");
             int nuevaEdad = Integer.parseInt(System.console().readLine());
-            Autor aux = new Autor(nuevoId, nuevoNReal, nuevoNArtistico, nuevaEdad);
+            Autor aux = new Autor(a.getId(), nuevoNReal, nuevoNArtistico, nuevaEdad);
             autores.remove(a.getId());
             autores.put(aux.getId(), aux);
             if (!a.getId().equals(aux.getId())) {
@@ -158,11 +154,6 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         if (autorExiste(id)) {
             Autor autor = autores.get(id);
             System.out.printf("ID Actual: %s\n", autor.getId());
-            String nuevoId;
-            do {
-                System.out.print("Nuevo ID: ");
-                nuevoId = System.console().readLine();
-            } while (discos.containsKey(nuevoId) & !id.equals(nuevoId));
             System.out.printf("Nombre artístico actual: %s\n", autor.getNombreArtistico());
             System.out.print("Nombre artístico nuevo: ");
             String nuevoNArtistico = System.console().readLine();
@@ -172,7 +163,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
             System.out.printf("Edad actual: %s\n", autor.getEdad());
             System.out.print("Edad nueva: ");
             int nuevaEdad = Integer.parseInt(System.console().readLine());
-            Autor aux = new Autor(nuevoId, nuevoNReal, nuevoNArtistico, nuevaEdad);
+            Autor aux = new Autor(id, nuevoNReal, nuevoNArtistico, nuevaEdad);
             autores.remove(id);
             autores.put(aux.getId(), aux);
             if (!id.equals(aux.getId())) {
@@ -217,7 +208,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
             System.out.print("Nuevo género: ");
             String nuevoGen = System.console().readLine();
             discos.get(aux.getId()).remove(id);
-            discos.get(aux.getId()).put(nuevoCod, new Disco(nuevoCod, nuevoTit, nuevoAut, nuevaDur, nuevoGen));
+            discos.get(nuevoAut).put(nuevoCod, new Disco(nuevoCod, nuevoTit, nuevoAut, nuevaDur, nuevoGen));
         } else {
             System.out.println("\nEse disco no existe");
         }
@@ -254,7 +245,7 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
             System.out.print("Nuevo género: ");
             String nuevoGen = System.console().readLine();
             discos.get(aux.getId()).remove(d.getCodigo());
-            discos.get(aux.getId()).put(nuevoCod, new Disco(nuevoCod, nuevoTit, nuevoAut, nuevaDur, nuevoGen));
+            discos.get(nuevoAut).put(nuevoCod, new Disco(nuevoCod, nuevoTit, nuevoAut, nuevaDur, nuevoGen));
         } else {
             System.out.println("\nEse disco no existe");
         }
