@@ -14,17 +14,34 @@ public class AppEquals {
         oeS.add(new OrdenarEquals("Eloy", "Solera", 21));
         oeS.add(new OrdenarEquals("David", "Zyra", 20));
         oeS.add(new OrdenarEquals("David", "Romero", 19));
-        System.out.println("Pre-ordenación:");
-        for (OrdenarEquals elem : oeS) {
-            System.out.println(elem);
-        }
+        /*
+         * System.out.println("Pre-ordenación:");
+         * 
+         * for (OrdenarEquals elem : oeS) {
+         * System.out.println(elem);
+         * }
+         */
         Collections.sort(oeS);
-        System.out.println("\nOrdenado: ");
-        for (OrdenarEquals elem : oeS) {
-            System.out.println(elem);
+        /*
+         * System.out.println("\nOrdenado: ");
+         * 
+         * for (OrdenarEquals elem : oeS) {
+         * System.out.println(elem);
+         * }
+         * System.out.println(oeS.get(0).equals(oeS.get(1)));
+         * System.out.println(oeS.get(0).equals(oeS.get(2)));
+         * System.out.println(oeS.get(1).equals(oeS.get(2)));
+         */
+        OrdenarEquals[] davides = oeS.stream().filter(nombre -> nombre.getNombre().equals("David"))
+                .toArray(OrdenarEquals[]::new);
+        for (int i = 0; i < davides.length; i++) {
+            System.out.println(davides[i]);
         }
-        System.out.println(oeS.get(0).equals(oeS.get(1)));
-        System.out.println(oeS.get(0).equals(oeS.get(2)));
-        System.out.println(oeS.get(1).equals(oeS.get(2)));
+        ArrayList<OrdenarEquals> davides2 = new ArrayList<>(
+                oeS.stream().filter(nombre -> nombre.getNombre().equals("David"))
+                        .toList());
+        for (int i = 0; i < davides2.size(); i++) {
+            System.out.println(davides2.get(i));
+        }
     }
 }
