@@ -27,6 +27,8 @@ public interface ColeccionDeDiscosInterface {
 
     public boolean autorExisteAlguno();
 
+    public boolean discoExisteAlguno();
+
     public boolean discoExiste(String autorId, Disco d);
 
     public boolean discoExiste(String autorId, String idDisco);

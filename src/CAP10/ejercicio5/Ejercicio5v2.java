@@ -11,7 +11,7 @@ public class Ejercicio5v2 {
         int opcion;
         ColeccionDeDiscos discos = new ColeccionDeDiscos();
         do {
-            opcion = ColeccionDeDiscos.menu();
+            opcion = MenuGestionDiscos.menuCompleto();
             System.out.println();
             switch (opcion) {
                 case 1:
@@ -39,24 +39,24 @@ public class Ejercicio5v2 {
                 }
                     break;
                 case 3: {
-                    if (discos.autorExisteAlguno()) {
+                    if (discos.autorExisteAlguno() & discos.discoExisteAlguno()) {
                         System.out.print("Introduce código del disco: ");
                         String codDisco = System.console().readLine();
                         discos.modificaDisco(codDisco);
                     } else {
-                        System.out.println("No hay autores disponibles");
+                        System.out.println("No hay discos / autores disponibles");
                     }
                 }
                     break;
                 case 4: {
-                    if (discos.autorExisteAlguno()) {
+                    if (discos.autorExisteAlguno() & discos.discoExisteAlguno()) {
                         System.out.print("Introduce ID del autor: ");
                         String autorId = System.console().readLine();
-                        System.out.print("Introduce ID del grupo: ");
+                        System.out.print("Introduce ID del disco: ");
                         String gruposId = System.console().readLine();
                         discos.eliminaDiscoDelAutor(autorId, gruposId);
                     } else {
-                        System.out.println("No hay autores disponibles");
+                        System.out.println("No hay discos / autores disponibles");
                     }
                 }
 

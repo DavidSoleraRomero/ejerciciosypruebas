@@ -10,20 +10,30 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
     private HashMap<String, HashMap<String, Disco>> discos = new HashMap<>();
     private HashMap<String, Autor> autores = new HashMap<>();
 
+    private int discosCreados;
+
+    public int getDiscosCreados() {
+        return discosCreados;
+    }
+
     public static int getCont() {
         return cont++;
     }
 
     @Override
     public void aniadeDiscoAlAutor(String autorId, Disco d) {
-        if ((!discoExiste(autorId, d)) & autorExiste(autorId))
+        if ((!discoExiste(autorId, d)) & autorExiste(autorId)) {
             discos.get(autorId).put(d.getCodigo(), d);
+            discosCreados++;
+        }
     }
 
     @Override
     public void eliminaDiscoDelAutor(String autorId, String discoId) {
-        if (discoExiste(autorId, discoId) & autorExiste(autorId))
+        if (discoExiste(autorId, discoId) & autorExiste(autorId)) {
             discos.get(autorId).remove(discoId);
+            discosCreados--;
+        }
     }
 
     @Override
@@ -74,6 +84,11 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
     }
 
     @Override
+    public boolean discoExisteAlguno() {
+        return (discosCreados > 0) ? true : false;
+    }
+
+    @Override
     public boolean discoExiste(String autorId, Disco d) {
         if (discos.containsKey(autorId)) {
             if (discos.get(autorId).containsKey(d.getCodigo())) {
@@ -111,8 +126,11 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         if (autorExiste(a)) {
             Autor autor = autores.get(a.getId());
             System.out.printf("ID Actual: %s\n", autor.getId());
-            System.out.print("Nuevo ID: ");
-            String nuevoId = System.console().readLine();
+            String nuevoId;
+            do {
+                System.out.print("Nuevo ID: ");
+                nuevoId = System.console().readLine();
+            } while (discos.containsKey(nuevoId) & !a.getId().equals(nuevoId));
             System.out.printf("Nombre artístico actual: %s\n", autor.getNombreArtistico());
             System.out.print("Nombre artístico nuevo: ");
             String nuevoNArtistico = System.console().readLine();
@@ -140,8 +158,11 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         if (autorExiste(id)) {
             Autor autor = autores.get(id);
             System.out.printf("ID Actual: %s\n", autor.getId());
-            System.out.print("Nuevo ID: ");
-            String nuevoId = System.console().readLine();
+            String nuevoId;
+            do {
+                System.out.print("Nuevo ID: ");
+                nuevoId = System.console().readLine();
+            } while (discos.containsKey(nuevoId) & !id.equals(nuevoId));
             System.out.printf("Nombre artístico actual: %s\n", autor.getNombreArtistico());
             System.out.print("Nombre artístico nuevo: ");
             String nuevoNArtistico = System.console().readLine();
@@ -179,8 +200,11 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         }
         if (existe) {
             System.out.printf("Disco de: %s\n", aux.getNombreArtistico());
-            System.out.print("Nuevo código: ");
-            String nuevoCod = System.console().readLine();
+            String nuevoCod;
+            do {
+                System.out.print("Nuevo código: ");
+                nuevoCod = System.console().readLine();
+            } while (discoExiste(aux.getId(), nuevoCod) & !nuevoCod.equals(id));
             System.out.print("Nuevo título: ");
             String nuevoTit = System.console().readLine();
             String nuevoAut;
@@ -213,8 +237,11 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         }
         if (existe) {
             System.out.printf("Disco de: %s\n", aux.getNombreArtistico());
-            System.out.print("Nuevo código: ");
-            String nuevoCod = System.console().readLine();
+            String nuevoCod;
+            do {
+                System.out.print("Nuevo código: ");
+                nuevoCod = System.console().readLine();
+            } while (discoExiste(aux.getId(), nuevoCod) & !nuevoCod.equals(d.getCodigo()));
             System.out.print("Nuevo título: ");
             String nuevoTit = System.console().readLine();
             String nuevoAut;
@@ -231,23 +258,6 @@ public class ColeccionDeDiscos implements ColeccionDeDiscosInterface {
         } else {
             System.out.println("\nEse disco no existe");
         }
-    }
-
-    public static int menu() {
-        System.out.println();
-        System.out.println("=====================");
-        System.out.println("|COLECCIÓN DE DISCOS|");
-        System.out.println("=====================");
-        System.out.println("1. Listado de todos los discos");
-        System.out.println("2. Nuevo disco de un autor");
-        System.out.println("3. Modifica disco de un autor");
-        System.out.println("4. Borrar disco");
-        System.out.println("5. Añadir autor");
-        System.out.println("6. Borrar autor");
-        System.out.println("7. Modificar autor");
-        System.out.println("8. Salir");
-        System.out.print("Opción: ");
-        return Integer.parseInt(System.console().readLine());
     }
 
 }
