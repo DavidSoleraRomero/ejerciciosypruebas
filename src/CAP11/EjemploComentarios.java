@@ -19,5 +19,7 @@ public class EjemploComentarios {
          */
 
         System.out.println("Adiós!"); // Otra línea con comentario de línea
+
+        /* Incluso puedo usar este tipo de comentario en una sola línea */
     }
 }
