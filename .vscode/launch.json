@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Arena",
+            "request": "launch",
+            "mainClass": "CAP11.juego.Arena",
+            "projectName": "ejerciciosypruebas_8cb9b849"
+        },
+        {
+            "type": "java",
             "name": "EjemploComentarios",
             "request": "launch",
             "mainClass": "CAP11.EjemploComentarios",
